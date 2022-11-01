@@ -70,14 +70,14 @@ const useShadowLightCoordinates = () => {
           0,
           Math.min(
             prevState.viewportX,
-            -(beta / 60) * prevState.viewportX + prevState.viewportX / 2
+            (beta / 60) * prevState.viewportX + prevState.viewportX / 2
           )
         ),
         clientY: Math.max(
           0,
           Math.min(
             prevState.viewportY,
-            -(alpha / 60) * prevState.viewportY + prevState.viewportY / 2
+            (alpha / 60) * prevState.viewportY + prevState.viewportY / 2
           )
         ),
       }));
