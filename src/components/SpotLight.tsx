@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import useMousePosition from "../hooks/useMousePosition";
 import useShadowLightCoordinates from "../hooks/useShadowLightCoordinates";
 import useWindowSize from "../hooks/useWindowSize";
 
