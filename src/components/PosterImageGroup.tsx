@@ -5,6 +5,7 @@ const PosterGroupContainer = styled.div`
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 1fr;
+  row-gap: 0;
 `;
 
 const PosterImageGroup: React.FC = () => {
