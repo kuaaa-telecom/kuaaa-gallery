@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import GalleryDetail from "../components/Gallery/GalleryDetail";
-import Layout from "../components/Layout";
+import GalleryDetail from "../../components/Gallery/GalleryDetail";
+import Layout from "../../components/Layout";
 
-export const Route = createFileRoute("/$itemId")({
+export const Route = createFileRoute("/kuaaa-gallery/$itemId")({
   component: RouteComponent,
 });
 

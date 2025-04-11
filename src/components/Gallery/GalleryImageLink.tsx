@@ -94,7 +94,7 @@ const GalleryImageLink = ({ item }: Props) => {
         image.onload = () => {
           setImageShown(true);
         };
-        image.src = item.thumbnail;
+        image.src = import.meta.env.BASE_URL + item.thumbnail;
       }
     });
     return () => {
@@ -110,7 +110,7 @@ const GalleryImageLink = ({ item }: Props) => {
         <GalleryImageContainer
           style={{
             ...(imageShown && {
-              backgroundImage: `url(${item.thumbnail})`,
+              backgroundImage: `url(${import.meta.env.BASE_URL}${item.thumbnail})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               opacity: 1,

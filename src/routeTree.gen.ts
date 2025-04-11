@@ -11,20 +11,20 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as ItemIdImport } from './routes/$itemId'
-import { Route as IndexImport } from './routes/index'
+import { Route as KuaaaGalleryIndexImport } from './routes/kuaaa-gallery/index'
+import { Route as KuaaaGalleryItemIdImport } from './routes/kuaaa-gallery/$itemId'
 
 // Create/Update Routes
 
-const ItemIdRoute = ItemIdImport.update({
-  id: '/$itemId',
-  path: '/$itemId',
+const KuaaaGalleryIndexRoute = KuaaaGalleryIndexImport.update({
+  id: '/kuaaa-gallery/',
+  path: '/kuaaa-gallery/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const IndexRoute = IndexImport.update({
-  id: '/',
-  path: '/',
+const KuaaaGalleryItemIdRoute = KuaaaGalleryItemIdImport.update({
+  id: '/kuaaa-gallery/$itemId',
+  path: '/kuaaa-gallery/$itemId',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -32,18 +32,18 @@ const IndexRoute = IndexImport.update({
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexImport
+    '/kuaaa-gallery/$itemId': {
+      id: '/kuaaa-gallery/$itemId'
+      path: '/kuaaa-gallery/$itemId'
+      fullPath: '/kuaaa-gallery/$itemId'
+      preLoaderRoute: typeof KuaaaGalleryItemIdImport
       parentRoute: typeof rootRoute
     }
-    '/$itemId': {
-      id: '/$itemId'
-      path: '/$itemId'
-      fullPath: '/$itemId'
-      preLoaderRoute: typeof ItemIdImport
+    '/kuaaa-gallery/': {
+      id: '/kuaaa-gallery/'
+      path: '/kuaaa-gallery'
+      fullPath: '/kuaaa-gallery'
+      preLoaderRoute: typeof KuaaaGalleryIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -52,38 +52,38 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/$itemId': typeof ItemIdRoute
+  '/kuaaa-gallery/$itemId': typeof KuaaaGalleryItemIdRoute
+  '/kuaaa-gallery': typeof KuaaaGalleryIndexRoute
 }
 
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/$itemId': typeof ItemIdRoute
+  '/kuaaa-gallery/$itemId': typeof KuaaaGalleryItemIdRoute
+  '/kuaaa-gallery': typeof KuaaaGalleryIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
-  '/': typeof IndexRoute
-  '/$itemId': typeof ItemIdRoute
+  '/kuaaa-gallery/$itemId': typeof KuaaaGalleryItemIdRoute
+  '/kuaaa-gallery/': typeof KuaaaGalleryIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$itemId'
+  fullPaths: '/kuaaa-gallery/$itemId' | '/kuaaa-gallery'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$itemId'
-  id: '__root__' | '/' | '/$itemId'
+  to: '/kuaaa-gallery/$itemId' | '/kuaaa-gallery'
+  id: '__root__' | '/kuaaa-gallery/$itemId' | '/kuaaa-gallery/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  ItemIdRoute: typeof ItemIdRoute
+  KuaaaGalleryItemIdRoute: typeof KuaaaGalleryItemIdRoute
+  KuaaaGalleryIndexRoute: typeof KuaaaGalleryIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  ItemIdRoute: ItemIdRoute,
+  KuaaaGalleryItemIdRoute: KuaaaGalleryItemIdRoute,
+  KuaaaGalleryIndexRoute: KuaaaGalleryIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -96,15 +96,15 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/",
-        "/$itemId"
+        "/kuaaa-gallery/$itemId",
+        "/kuaaa-gallery/"
       ]
     },
-    "/": {
-      "filePath": "index.tsx"
+    "/kuaaa-gallery/$itemId": {
+      "filePath": "kuaaa-gallery/$itemId.tsx"
     },
-    "/$itemId": {
-      "filePath": "$itemId.tsx"
+    "/kuaaa-gallery/": {
+      "filePath": "kuaaa-gallery/index.tsx"
     }
   }
 }

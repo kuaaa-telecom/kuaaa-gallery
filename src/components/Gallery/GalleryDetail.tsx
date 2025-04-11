@@ -72,7 +72,7 @@ const GalleryDetail = (props: { itemId: string }) => {
 
   return (
     <>
-      <MainImage src={item.image[0]} />
+      <MainImage src={import.meta.env.BASE_URL + item.image[0]} />
       <PageContainer>
         <ImageInfoContainer>
           <TagBox>
