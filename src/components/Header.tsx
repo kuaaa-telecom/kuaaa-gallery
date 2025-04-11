@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 const HeaderConatiner = styled.div`
   width: 100%;
   height: 96px;
-  position: absolute;
+  position: fixed;
   top: 0;
   display: flex;
   align-items: center;

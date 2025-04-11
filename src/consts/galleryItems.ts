@@ -1,0 +1,60 @@
+import { GalleryItem } from "../types/galleryItem";
+
+export const galleryItems: GalleryItem[] = [
+  {
+    id: "20250329_galaxy_1",
+    title: "20250329 진여울 봄은하수",
+    thumbnail: "/images/20250329_galaxy_thumbnail.png",
+    image: ["/images/20250329_galaxy.png"],
+    author: "20 컴퓨터학과 최희원",
+    description: "새벽 3시 경 찍은 은하수.",
+  },
+  {
+    id: "20250329_galaxy_2",
+    title: "20250329 진여울 봄은하수",
+    thumbnail: "/images/20250329_galaxy_thumbnail.png",
+    image: ["/images/20250329_galaxy.png"],
+    author: "20 컴퓨터학과 최희원",
+    description: "새벽 3시 경 찍은 은하수.",
+  },
+  {
+    id: "20250329_galaxy_3",
+    title: "20250329 진여울 봄은하수",
+    thumbnail: "/images/20250329_galaxy_thumbnail.png",
+    image: ["/images/20250329_galaxy.png"],
+    author: "20 컴퓨터학과 최희원",
+    description: "새벽 3시 경 찍은 은하수.",
+  },
+  {
+    id: "20250329_galaxy_4",
+    title: "20250329 진여울 봄은하수",
+    thumbnail: "/images/20250329_galaxy_thumbnail.png",
+    image: ["/images/20250329_galaxy.png"],
+    author: "20 컴퓨터학과 최희원",
+    description: "새벽 3시 경 찍은 은하수.",
+  },
+  {
+    id: "20250329_galaxy_5",
+    title: "20250329 진여울 봄은하수",
+    thumbnail: "/images/20250329_galaxy_thumbnail.png",
+    image: ["/images/20250329_galaxy.png"],
+    author: "20 컴퓨터학과 최희원",
+    description: "새벽 3시 경 찍은 은하수.",
+  },
+  {
+    id: "20250329_galaxy_6",
+    title: "20250329 진여울 봄은하수",
+    thumbnail: "/images/20250329_galaxy_thumbnail.png",
+    image: ["/images/20250329_galaxy.png"],
+    author: "20 컴퓨터학과 최희원",
+    description: "새벽 3시 경 찍은 은하수.",
+  },
+  {
+    id: "20250329_galaxy_7",
+    title: "20250329 진여울 봄은하수",
+    thumbnail: "/images/20250329_galaxy_thumbnail.png",
+    image: ["/images/20250329_galaxy.png"],
+    author: "20 컴퓨터학과 최희원",
+    description: "새벽 3시 경 찍은 은하수.",
+  },
+];
