@@ -82,13 +82,15 @@ const GalleryDetail = (props: { itemId: string }) => {
             </TagContainer>
           </TagBox>
           <Divider />
-          <TagBox>
-            <TagContainer>
-              <IconUser size={"1.2em"} /> {item.author}
-            </TagContainer>
-          </TagBox>
+          {item.author && (
+            <TagBox>
+              <TagContainer>
+                <IconUser size={"1.2em"} /> {item.author}
+              </TagContainer>
+            </TagBox>
+          )}
           <Divider />
-          <Description>{item.description}</Description>
+          {item.description && <Description>{item.description}</Description>}
         </ImageInfoContainer>
       </PageContainer>
     </>
