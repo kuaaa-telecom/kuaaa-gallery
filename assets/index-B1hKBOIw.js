@@ -1,4 +1,4 @@
-import{r as n,j as e,n as a,L as d}from"./index-sY5W4XOM.js";import{u as m,L as g,g as u}from"./galleryItems-DhyMyZXL.js";const y=a.li`
+import{r as n,j as e,n as a,L as d}from"./index-rGvmUVkC.js";import{u as m,L as g,g as u}from"./galleryItems-B-y9P-et.js";const y=a.li`
   aspect-ratio: 1;
 `,x=a(d)`
   position: relative;
@@ -57,7 +57,7 @@ import{r as n,j as e,n as a,L as d}from"./index-sY5W4XOM.js";import{u as m,L as 
     transform 0.2s;
 `,w=a.span`
   font-size: 16px;
-`,I=({item:t})=>{const{register:r,deregister:o}=m(),i=n.useRef(null),[l,c]=n.useState(!1);return n.useEffect(()=>{if(i.current&&!l)return console.log(r),r(i.current,p=>{if(p.intersectionRatio>0){const s=new Image;s.onload=()=>{c(!0)},s.src="/kuaaa-gallery/"+t.thumbnail}}),()=>{o()}},[o,l,t.thumbnail,r]),e.jsx(y,{ref:i,children:e.jsxs(x,{href:`/kuaaa-gallery//${t.id.replace(/^\//,"").replace(/\/$/,"")}/`,children:[e.jsx(b,{style:{...l&&{backgroundImage:`url(/kuaaa-gallery/${t.thumbnail})`,backgroundSize:"cover",backgroundPosition:"center",opacity:1},transitionDelay:`${Math.random()*.4}s, 0s`},className:"gallery-image"}),e.jsx(h,{className:"gallery-title",children:e.jsx(w,{children:t.title})}),e.jsx(f,{className:"gallery-border"})]})})},j=a.ul`
+`,I=({item:t})=>{const{register:r,deregister:o}=m(),i=n.useRef(null),[l,c]=n.useState(!1);return n.useEffect(()=>{if(i.current&&!l)return console.log(i.current),r(i.current,p=>{if(p.intersectionRatio>0){const s=new Image;s.onload=()=>{c(!0)},s.src="/kuaaa-gallery/"+t.thumbnail}}),()=>{o()}},[o,l,t.thumbnail,r]),e.jsx(y,{ref:i,children:e.jsxs(x,{href:`/kuaaa-gallery//${t.id.replace(/^\//,"").replace(/\/$/,"")}/`,children:[e.jsx(b,{style:{...l&&{backgroundImage:`url(/kuaaa-gallery/${t.thumbnail})`,backgroundSize:"cover",backgroundPosition:"center",opacity:1},transitionDelay:`${Math.random()*.4}s, 0s`},className:"gallery-image"}),e.jsx(h,{className:"gallery-title",children:e.jsx(w,{children:t.title})}),e.jsx(f,{className:"gallery-border"})]})})},j=a.ul`
   display: grid;
   list-style: none;
   padding: 0;
