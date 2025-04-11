@@ -11,7 +11,7 @@ import NotFound from "../NotFound";
 
 const MainImage = styled.img`
   width: 100%;
-  height: calc(100vh - 96px);
+  max-height: 100vmin;
   object-fit: contain;
 `;
 
@@ -33,6 +33,8 @@ const ImageTitleContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
 `;
 
 const ImageTitle = styled.div`
@@ -51,6 +53,7 @@ const TagBox = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
   gap: 16px;
 `;
 
