@@ -1,4 +1,4 @@
-import{r as l,j as e,n,R as k}from"./index-vbG_5Anl.js";import{g as M,L as I}from"./galleryItems-CF9fhd0v.js";/**
+import{r as l,j as e,n,R as k}from"./index-NpzX9fxk.js";import{g as M,L as I}from"./galleryItems-Clsk9CQu.js";/**
  * @license @tabler/icons-react v3.31.0 - MIT
  *
  * This source code is licensed under the MIT license.
@@ -92,4 +92,6 @@ import{r as l,j as e,n,R as k}from"./index-vbG_5Anl.js";import{g as M,L as I}fro
   flex-direction: row;
   align-items: center;
   gap: 4px;
+  word-break: keep-all;
+  line-height: 1.4em;
 `,P=r=>{const{itemId:s}=r,t=M.find(i=>i.id===s);return t?e.jsxs(e.Fragment,{children:[e.jsx(q,{src:"/kuaaa-gallery/"+t.image[0]}),e.jsx(A,{children:e.jsxs(B,{children:[e.jsxs(N,{children:[e.jsx(S,{children:t.title})," ",e.jsxs(x,{children:[e.jsxs(a,{children:[e.jsx(z,{size:"1.2em"})," ",t.date.toLocaleDateString()]}),t.author&&e.jsxs(a,{children:[e.jsx(T,{size:"1.2em"})," ",t.author]}),t.location&&e.jsxs(a,{children:[e.jsx(E,{size:"1.2em"})," ",t.location]})]})]}),e.jsx(g,{}),(t.equipments||t.softwares)&&e.jsxs(x,{children:[t.equipments&&t.equipments.map(i=>e.jsxs(a,{children:[e.jsx(R,{size:"1.2em"})," ",i]})),t.softwares&&t.softwares.map(i=>e.jsxs(a,{children:[e.jsx(b,{size:"1.2em"})," ",i]}))]}),e.jsx(g,{}),t.description&&e.jsx(F,{children:t.description})]})})]}):e.jsx(D,{})},$=function(){const{itemId:s}=k.useParams();return e.jsx(I,{children:e.jsx(P,{itemId:s})})};export{$ as component};
