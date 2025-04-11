@@ -48,6 +48,15 @@ export const galleryItems: GalleryItem[] = [
     description: "소프트 필터 빼는 걸 까먹고 찍은 안드로메다 은하.",
   },
   {
+    id: "20241208_pleiades",
+    title: "20241208 플레이아데스",
+    thumbnail: "/images/20241208_pleiades_thumbnail.png",
+    image: ["/images/20241208_pleiades.png"],
+    date: new Date("2024-12-08"),
+    author: "20 컴퓨터학과 최희원",
+    description: "벗고개에서 살짝 벗어난 공터에서 찍은 플레이아데스 성단.",
+  },
+  {
     id: "20241208_orion",
     title: "20241208 오리온자리",
     thumbnail: "/images/20241208_orion_thumbnail.png",
