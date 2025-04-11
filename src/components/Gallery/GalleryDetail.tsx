@@ -75,6 +75,8 @@ const Description = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 4px;
+  word-break: keep-all;
+  line-height: 1.4em;
 `;
 
 const GalleryDetail = (props: { itemId: string }) => {
