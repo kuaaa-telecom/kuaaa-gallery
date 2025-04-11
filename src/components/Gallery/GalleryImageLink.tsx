@@ -95,14 +95,13 @@ const GalleryImageLink = ({ item }: Props) => {
           setImageShown(true);
         };
         image.src = import.meta.env.BASE_URL + item.thumbnail;
+        console.log(image.src);
       }
     });
     return () => {
       deregister();
     };
   }, [deregister, imageShown, item.thumbnail, register]);
-
-  console.log(imageShown);
 
   return (
     <GalleryItemContainer ref={galleryItemRef}>
