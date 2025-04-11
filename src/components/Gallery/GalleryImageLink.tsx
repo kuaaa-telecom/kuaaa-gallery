@@ -95,7 +95,7 @@ const GalleryImageLink = ({ item }: Props) => {
         image.onload = () => {
           setImageShown(true);
         };
-        console.log(image.src);
+        image.src = import.meta.env.BASE_URL + item.thumbnail;
       }
     });
     return () => {
