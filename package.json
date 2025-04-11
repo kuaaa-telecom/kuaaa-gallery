@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@tanstack/react-router": "^1.115.2",
     "@tanstack/router": "^0.0.1-beta.53",
     "@tanstack/router-devtools": "^1.115.2",
     "@tanstack/router-plugin": "^1.115.2",
+    "emotion-reset": "^3.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
