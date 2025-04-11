@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { PropsWithChildren } from "react";
-import { IntersectionObserverProvider } from "../contexts/IntersectionObserverContext";
 
 const LayoutContainer = styled.div`
   position: relative;
@@ -13,11 +12,7 @@ const LayoutContainer = styled.div`
 const Layout = (props: PropsWithChildren) => {
   const { children } = props;
 
-  return (
-    <IntersectionObserverProvider>
-      <LayoutContainer>{children}</LayoutContainer>
-    </IntersectionObserverProvider>
-  );
+  return <LayoutContainer>{children}</LayoutContainer>;
 };
 
 export default Layout;
