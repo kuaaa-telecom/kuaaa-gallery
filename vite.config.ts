@@ -8,5 +8,5 @@ export default defineConfig({
     TanStackRouterVite({ target: "react", autoCodeSplitting: true }),
     react(),
   ],
-  base: "kuaaa-gallery",
+  base: "/kuaaa-gallery/",
 });
