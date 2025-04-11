@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Link } from "@tanstack/react-router";
 
 const HeaderConatiner = styled.div`
   width: 100%;
@@ -16,8 +17,21 @@ const HeaderConatiner = styled.div`
   font-family: Pretendard;
 `;
 
+const HomeText = styled(Link)`
+  position: relative;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+`;
+
 const Header = () => {
-  return <HeaderConatiner>KUAAA GALLERY</HeaderConatiner>;
+  return (
+    <HeaderConatiner>
+      <HomeText href="/">밤하늘 저장소</HomeText>
+    </HeaderConatiner>
+  );
 };
 
 export default Header;
