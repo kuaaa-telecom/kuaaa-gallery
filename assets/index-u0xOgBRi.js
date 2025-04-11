@@ -1,4 +1,4 @@
-import{r as o,j as e,n as a,L as d}from"./index-CO7j6vh9.js";import{u as m,L as g,g as u}from"./galleryItems-2GTaCqWJ.js";const y=a.li`
+import{r as n,j as e,n as a,L as d}from"./index-DI85_Dx9.js";import{u as m,L as g,g as u}from"./galleryItems-C-LfSrBy.js";const y=a.li`
   aspect-ratio: 1;
 `,x=a(d)`
   position: relative;
@@ -57,7 +57,7 @@ import{r as o,j as e,n as a,L as d}from"./index-CO7j6vh9.js";import{u as m,L as 
     transform 0.2s;
 `,w=a.span`
   font-size: 16px;
-`,I=({item:t})=>{const{register:r,deregister:s}=m(),i=o.useRef(null),[l,c]=o.useState(!1);return o.useEffect(()=>{if(i.current&&!l)return r(i.current,p=>{if(p.intersectionRatio>0){const n=new Image;n.onload=()=>{c(!0)},n.src="/kuaaa-gallery/"+t.thumbnail,console.log(n.src)}}),()=>{s()}},[s,l,t.thumbnail,r]),e.jsx(y,{ref:i,children:e.jsxs(x,{href:`/kuaaa-gallery//${t.id.replace(/^\//,"").replace(/\/$/,"")}/`,children:[e.jsx(b,{style:{...l&&{backgroundImage:`url(/kuaaa-gallery/${t.thumbnail})`,backgroundSize:"cover",backgroundPosition:"center",opacity:1},transitionDelay:`${Math.random()*.4}s, 0s`},className:"gallery-image"}),e.jsx(h,{className:"gallery-title",children:e.jsx(w,{children:t.title})}),e.jsx(f,{className:"gallery-border"})]})})},j=a.ul`
+`,I=({item:t})=>{const{register:r,deregister:l}=m(),i=n.useRef(null),[o,p]=n.useState(!1);return n.useEffect(()=>{if(i.current&&!o)return r(i.current,s=>{if(console.log(s.intersectionRatio),s.intersectionRatio>0){const c=new Image;c.onload=()=>{p(!0)},console.log(c.src)}}),()=>{l()}},[l,o,t.thumbnail,r]),e.jsx(y,{ref:i,children:e.jsxs(x,{href:`/kuaaa-gallery//${t.id.replace(/^\//,"").replace(/\/$/,"")}/`,children:[e.jsx(b,{style:{...o&&{backgroundImage:`url(/kuaaa-gallery/${t.thumbnail})`,backgroundSize:"cover",backgroundPosition:"center",opacity:1},transitionDelay:`${Math.random()*.4}s, 0s`},className:"gallery-image"}),e.jsx(h,{className:"gallery-title",children:e.jsx(w,{children:t.title})}),e.jsx(f,{className:"gallery-border"})]})})},j=a.ul`
   display: grid;
   list-style: none;
   padding: 0;
