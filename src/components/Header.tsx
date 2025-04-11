@@ -29,7 +29,7 @@ const HomeText = styled(Link)`
 const Header = () => {
   return (
     <HeaderConatiner>
-      <HomeText href="/">밤하늘 저장소</HomeText>
+      <HomeText href={`${import.meta.env.BASE_URL}/`}>밤하늘 저장소</HomeText>
     </HeaderConatiner>
   );
 };

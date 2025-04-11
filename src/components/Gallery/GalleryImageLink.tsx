@@ -105,7 +105,7 @@ const GalleryImageLink = ({ item }: Props) => {
   return (
     <GalleryItemContainer ref={galleryItemRef}>
       <GalleryItemLink
-        href={`/${item.id.replace(/^\//, "").replace(/\/$/, "")}/`}
+        href={`${import.meta.env.BASE_URL}/${item.id.replace(/^\//, "").replace(/\/$/, "")}/`}
       >
         <GalleryImageContainer
           style={{
