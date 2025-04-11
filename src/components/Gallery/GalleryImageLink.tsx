@@ -89,12 +89,12 @@ const GalleryImageLink = ({ item }: Props) => {
     if (!galleryItemRef.current) return;
     if (imageShown) return;
     register(galleryItemRef.current, (entry) => {
+      console.log(entry.intersectionRatio);
       if (entry.intersectionRatio > 0) {
         const image = new Image();
         image.onload = () => {
           setImageShown(true);
         };
-        image.src = import.meta.env.BASE_URL + item.thumbnail;
         console.log(image.src);
       }
     });
