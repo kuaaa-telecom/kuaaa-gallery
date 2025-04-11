@@ -1,4 +1,4 @@
-import{r,j as e,n,R as k}from"./index-bHGaqLHd.js";import{g as C,L as I}from"./Layout-BnQsYdk3.js";/**
+import{r,j as e,n,R as k}from"./index-Bp2uwa-C.js";import{g as C,L as I}from"./galleryItems-2vpQrRqH.js";/**
  * @license @tabler/icons-react v3.31.0 - MIT
  *
  * This source code is licensed under the MIT license.
@@ -8,7 +8,7 @@ import{r,j as e,n,R as k}from"./index-bHGaqLHd.js";import{g as C,L as I}from"./L
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
- */const g=(o,i,t,s)=>{const c=r.forwardRef(({color:m="currentColor",size:l=24,stroke:v=2,title:d,className:f,children:a,...w},u)=>r.createElement("svg",{ref:u,...M[o],width:l,height:l,className:["tabler-icon",`tabler-icon-${i}`,f].join(" "),strokeWidth:v,stroke:m,...w},[d&&r.createElement("title",{key:"svg-title"},d),...s.map(([j,y])=>r.createElement(j,y)),...Array.isArray(a)?a:[a]]));return c.displayName=`${t}`,c};/**
+ */const g=(o,i,t,s)=>{const c=r.forwardRef(({color:m="currentColor",size:l=24,stroke:v=2,title:d,className:f,children:a,...u},w)=>r.createElement("svg",{ref:w,...M[o],width:l,height:l,className:["tabler-icon",`tabler-icon-${i}`,f].join(" "),strokeWidth:v,stroke:m,...u},[d&&r.createElement("title",{key:"svg-title"},d),...s.map(([j,y])=>r.createElement(j,y)),...Array.isArray(a)?a:[a]]));return c.displayName=`${t}`,c};/**
  * @license @tabler/icons-react v3.31.0 - MIT
  *
  * This source code is licensed under the MIT license.
@@ -69,4 +69,4 @@ import{r,j as e,n,R as k}from"./index-bHGaqLHd.js";import{g as C,L as I}from"./L
   flex-direction: row;
   align-items: center;
   gap: 4px;
-`,S=o=>{const{itemId:i}=o,t=C.find(s=>s.id===i);return t?e.jsxs(e.Fragment,{children:[e.jsx(L,{src:t.image[0]}),e.jsx(D,{children:e.jsxs(A,{children:[e.jsxs(p,{children:[e.jsx(B,{children:t.title})," ",e.jsxs(x,{children:[e.jsx(b,{size:"1.2em"})," ",t.date.toLocaleDateString()]})]}),e.jsx(h,{}),t.author&&e.jsx(p,{children:e.jsxs(x,{children:[e.jsx(z,{size:"1.2em"})," ",t.author]})}),e.jsx(h,{}),t.description&&e.jsx(N,{children:t.description})]})})]}):e.jsx(E,{})},P=function(){const{itemId:i}=k.useParams();return e.jsx(I,{children:e.jsx(S,{itemId:i})})};export{P as component};
+`,S=o=>{const{itemId:i}=o,t=C.find(s=>s.id===i);return t?e.jsxs(e.Fragment,{children:[e.jsx(L,{src:"/kuaaa-gallery/"+t.image[0]}),e.jsx(D,{children:e.jsxs(A,{children:[e.jsxs(p,{children:[e.jsx(B,{children:t.title})," ",e.jsxs(x,{children:[e.jsx(b,{size:"1.2em"})," ",t.date.toLocaleDateString()]})]}),e.jsx(h,{}),t.author&&e.jsx(p,{children:e.jsxs(x,{children:[e.jsx(z,{size:"1.2em"})," ",t.author]})}),e.jsx(h,{}),t.description&&e.jsx(N,{children:t.description})]})})]}):e.jsx(E,{})},P=function(){const{itemId:i}=k.useParams();return e.jsx(I,{children:e.jsx(S,{itemId:i})})};export{P as component};
