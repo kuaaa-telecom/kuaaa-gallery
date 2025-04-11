@@ -9,6 +9,13 @@ export const galleryItems: GalleryItem[] = [
     date: new Date("2025-03-29"),
     author: "20 컴퓨터학과 최희원",
     description: "오리온 대성운.",
+    equipments: [
+      "Sony a7CR",
+      "Sony 70-200mm F2.8 GM (200mm)",
+      "Benro Polaris Astro",
+    ],
+    softwares: ["Siril"],
+    location: "진여울 펜션",
   },
   {
     id: "20250329_galaxy",
@@ -18,6 +25,14 @@ export const galleryItems: GalleryItem[] = [
     date: new Date("2025-03-29"),
     author: "20 컴퓨터학과 최희원",
     description: "새벽 3시 경 찍은 은하수.",
+    equipments: [
+      "Sony a7CR",
+      "Samyang MF 14mm F2.8",
+      "Benro Polaris Astro",
+      "Gelatin filter",
+    ],
+    softwares: ["Siril"],
+    location: "진여울 펜션",
   },
   {
     id: "20250325_galaxy",
@@ -27,6 +42,14 @@ export const galleryItems: GalleryItem[] = [
     date: new Date("2025-03-25"),
     author: "20 컴퓨터학과 최희원",
     description: "동 트기 직전 은하수.",
+    equipments: [
+      "Sony a7CR",
+      "Samyang MF 24mm F1.4",
+      "Benro Polaris Astro",
+      "Kenko Prosofton",
+    ],
+    softwares: ["Siril"],
+    location: "진여울 펜션",
   },
   {
     id: "20250321_startrail",
@@ -37,6 +60,14 @@ export const galleryItems: GalleryItem[] = [
     author: "20 컴퓨터학과 최희원",
     description:
       "관측지로 쓸 만한 곳은 아니지만 일주를 찍기에는 나쁘지 않은 곳. 경사가 심한 오르막이 있음.",
+    equipments: [
+      "Sony a7CR",
+      "Samyang MF 24mm F1.4",
+      "Benro Polaris Astro",
+      "Kenko Prosofton",
+    ],
+    softwares: ["StarStaX"],
+    location: "홍천",
   },
   {
     id: "20241223_andromeda",
@@ -46,6 +77,14 @@ export const galleryItems: GalleryItem[] = [
     date: new Date("2024-12-23"),
     author: "20 컴퓨터학과 최희원",
     description: "소프트 필터 빼는 걸 까먹고 찍은 안드로메다 은하.",
+    equipments: [
+      "Sony a7CR",
+      "Sigma A 50mm F1.4",
+      "Benro Polaris Astro",
+      "Kenko Prosofton",
+    ],
+    softwares: ["Siril"],
+    location: "진여울 펜션",
   },
   {
     id: "20241208_pleiades",
@@ -55,6 +94,14 @@ export const galleryItems: GalleryItem[] = [
     date: new Date("2024-12-08"),
     author: "20 컴퓨터학과 최희원",
     description: "벗고개에서 살짝 벗어난 공터에서 찍은 플레이아데스 성단.",
+    equipments: [
+      "Sony a7CR",
+      "Sigma A 50mm F1.4",
+      "Benro Polaris Astro",
+      "Kenko Prosofton",
+    ],
+    softwares: ["Siril"],
+    location: "벗고개",
   },
   {
     id: "20241208_orion",
@@ -64,5 +111,13 @@ export const galleryItems: GalleryItem[] = [
     date: new Date("2024-12-08"),
     author: "20 컴퓨터학과 최희원",
     description: "50mm 화각에서 살짝 크롭한 오리온자리.",
+    equipments: [
+      "Sony a7CR",
+      "Sigma A 50mm F1.4",
+      "Benro Polaris Astro",
+      "Kenko Prosofton",
+    ],
+    softwares: ["Siril"],
+    location: "벗고개",
   },
 ];

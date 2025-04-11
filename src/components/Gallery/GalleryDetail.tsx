@@ -1,5 +1,11 @@
 import styled from "@emotion/styled";
-import { IconCalendar, IconUser } from "@tabler/icons-react";
+import {
+  IconCalendar,
+  IconEdit,
+  IconMap,
+  IconTelescope,
+  IconUser,
+} from "@tabler/icons-react";
 import { galleryItems } from "../../consts/galleryItems";
 import NotFound from "../NotFound";
 
@@ -20,6 +26,13 @@ const ImageInfoContainer = styled.div`
   max-width: 1200px;
   padding: 64px 2em;
   color: white;
+`;
+
+const ImageTitleContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const ImageTitle = styled.div`
@@ -75,18 +88,39 @@ const GalleryDetail = (props: { itemId: string }) => {
       <MainImage src={import.meta.env.BASE_URL + item.image[0]} />
       <PageContainer>
         <ImageInfoContainer>
-          <TagBox>
+          <ImageTitleContainer>
             <ImageTitle>{item.title}</ImageTitle>{" "}
-            <TagContainer>
-              <IconCalendar size={"1.2em"} /> {item.date.toLocaleDateString()}
-            </TagContainer>
-          </TagBox>
-          <Divider />
-          {item.author && (
             <TagBox>
               <TagContainer>
-                <IconUser size={"1.2em"} /> {item.author}
+                <IconCalendar size={"1.2em"} /> {item.date.toLocaleDateString()}
               </TagContainer>
+              {item.author && (
+                <TagContainer>
+                  <IconUser size={"1.2em"} /> {item.author}
+                </TagContainer>
+              )}
+              {item.location && (
+                <TagContainer>
+                  <IconMap size={"1.2em"} /> {item.location}
+                </TagContainer>
+              )}
+            </TagBox>
+          </ImageTitleContainer>
+          <Divider />
+          {(item.equipments || item.softwares) && (
+            <TagBox>
+              {item.equipments &&
+                item.equipments.map((equipment) => (
+                  <TagContainer>
+                    <IconTelescope size={"1.2em"} /> {equipment}
+                  </TagContainer>
+                ))}
+              {item.softwares &&
+                item.softwares.map((software) => (
+                  <TagContainer>
+                    <IconEdit size={"1.2em"} /> {software}
+                  </TagContainer>
+                ))}
             </TagBox>
           )}
           <Divider />

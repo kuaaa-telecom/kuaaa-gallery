@@ -6,4 +6,7 @@ export interface GalleryItem {
   date: Date;
   author?: string;
   description?: string;
+  equipments?: string[];
+  softwares?: string[];
+  location?: string;
 }
