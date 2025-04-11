@@ -99,7 +99,7 @@ let componentIdCounter = 0;
 
 export const useIntersectionObserver = () => {
   const uniqueComponentId = useRef<string>(
-    `shiftpsh-observer-${componentIdCounter++}`
+    `havana723-observer-${componentIdCounter++}`
   );
   const { register, deregister } = useContext(IntersectionObserverContext);
 

@@ -88,8 +88,8 @@ const GalleryImageLink = ({ item }: Props) => {
   useEffect(() => {
     if (!galleryItemRef.current) return;
     if (imageShown) return;
+    console.log(register);
     register(galleryItemRef.current, (entry) => {
-      console.log(entry.intersectionRatio);
       if (entry.intersectionRatio > 0) {
         const image = new Image();
         image.onload = () => {
