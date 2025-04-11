@@ -102,6 +102,8 @@ const GalleryImageLink = ({ item }: Props) => {
     };
   }, [deregister, imageShown, item.thumbnail, register]);
 
+  console.log(imageShown);
+
   return (
     <GalleryItemContainer ref={galleryItemRef}>
       <GalleryItemLink
