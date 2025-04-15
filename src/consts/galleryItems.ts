@@ -161,6 +161,14 @@ export const galleryItems: GalleryItem[] = [
     author: "16 컴퓨터학과 이건우",
   },
   {
+    id: "20200530_western_veil",
+    title: "20200530 서쪽 베일 성운",
+    thumbnail: "/20200530_western_veil_thumbnail.png",
+    image: ["/20200530_western_veil.png"],
+    date: new Date("2020-05-30"),
+    author: "16 컴퓨터학과 이건우",
+  },
+  {
     id: "20180717_galaxy",
     title: "20180717 은하수",
     thumbnail: "/20180717_galaxy_thumbnail.png",
