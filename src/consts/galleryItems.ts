@@ -137,6 +137,22 @@ export const galleryItems: GalleryItem[] = [
     author: "16 컴퓨터학과 이건우",
   },
   {
+    id: "20180519_antares",
+    title: "20180519 안타레스 주변부",
+    thumbnail: "/20180519_antares_thumbnail.png",
+    image: ["/20180519_antares.png"],
+    date: new Date("2018-05-19"),
+    author: "16 컴퓨터학과 이건우",
+  },
+  {
+    id: "20171021_pleiades",
+    title: "20171021 플레이아데스",
+    thumbnail: "/20171021_pleiades_thumbnail.png",
+    image: ["/20171021_pleiades.png"],
+    date: new Date("2017-10-21"),
+    author: "16 컴퓨터학과 이건우",
+  },
+  {
     id: "20170503_galaxy",
     title: "20170503 은하수",
     thumbnail: "/20170503_galaxy_thumbnail.png",
