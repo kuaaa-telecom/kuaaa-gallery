@@ -169,6 +169,14 @@ export const galleryItems: GalleryItem[] = [
     author: "16 컴퓨터학과 이건우",
   },
   {
+    id: "20181104_rosetta",
+    title: "20181104 장미 성운",
+    thumbnail: "/20181104_rosetta_thumbnail.png",
+    image: ["/20181104_rosetta.png"],
+    date: new Date("2018-11-04"),
+    author: "16 컴퓨터학과 이건우",
+  },
+  {
     id: "20180717_galaxy",
     title: "20180717 은하수",
     thumbnail: "/20180717_galaxy_thumbnail.png",
