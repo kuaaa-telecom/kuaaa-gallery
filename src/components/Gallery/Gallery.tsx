@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
+import { IconArrowDown, IconArrowUp } from "@tabler/icons-react";
 import { UseNavigateResult } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { GalleryItem } from "../../types/galleryItem";
 import GalleryImageLink from "./GalleryImageLink";
 
 const MainContainer = styled.div`
+  position: relative;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -26,6 +28,31 @@ const Searchbar = styled.input`
   background: #282828;
   color: white;
   border-bottom: 1px solid white;
+`;
+
+const SortContainer = styled.div`
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: white;
+  gap: 8px;
+`;
+
+const SortIcon = styled.div`
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+
+  &:hover {
+    background-color: #ffffff35;
+  }
 `;
 
 const GalleryGrid = styled.ul`
@@ -53,6 +80,8 @@ interface GalleryProps {
 
 const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
   const [query, setQuery] = useState<string>(queryParam);
+  const [sortBy] = useState<string>("date");
+  const [sort, setSort] = useState<string>("desc");
 
   const throttledSetQuery = useMemo(() => {
     let timeout: number;
@@ -103,6 +132,13 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
     });
   }, [items, query]);
 
+  const sortedItems = useMemo(() => {
+    const sortedAscending = filteredItems.sort(
+      (a, b) => (a.date?.getTime() || 0) - (b.date?.getTime() || 0)
+    );
+    return sort === "asc" ? sortedAscending : sortedAscending.reverse();
+  }, [filteredItems, sort]);
+
   console.log(filteredItems);
 
   return (
@@ -116,9 +152,22 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
           onChange={(e) => throttledSetQuery(e.target.value)}
         />
         <Space $height="80px" />
+        <SortContainer>
+          {sort === "asc" ? (
+            <SortIcon>
+              <IconArrowUp size={16} onClick={() => setSort("desc")} />
+            </SortIcon>
+          ) : (
+            <SortIcon>
+              <IconArrowDown size={16} onClick={() => setSort("asc")} />
+            </SortIcon>
+          )}
+          촬영일
+        </SortContainer>
+        <Space $height="80px" />
       </MainContainer>
       <GalleryGrid>
-        {filteredItems.map((item) => (
+        {sortedItems.map((item) => (
           <GalleryImageLink item={item} key={item.id} />
         ))}
       </GalleryGrid>
