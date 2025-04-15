@@ -1,4 +1,4 @@
-import{r as l,j as e,n,R as k}from"./index-CGM-0lsc.js";import{g as M,L as I}from"./galleryItems-B-IfyPtl.js";/**
+import{r as l,j as e,n,R as k}from"./index-DTur0PtQ.js";import{g as M,L as I}from"./galleryItems-DZKNqokS.js";/**
  * @license @tabler/icons-react v3.31.0 - MIT
  *
  * This source code is licensed under the MIT license.
@@ -8,7 +8,7 @@ import{r as l,j as e,n,R as k}from"./index-CGM-0lsc.js";import{g as M,L as I}fro
  *
  * This source code is licensed under the MIT license.
  * See the LICENSE file in the root directory of this source tree.
- */const o=(r,s,t,i)=>{const d=l.forwardRef(({color:m="currentColor",size:p=24,stroke:v=2,title:h,className:f,children:c,...w},u)=>l.createElement("svg",{ref:u,...C[r],width:p,height:p,className:["tabler-icon",`tabler-icon-${s}`,f].join(" "),strokeWidth:v,stroke:m,...w},[h&&l.createElement("title",{key:"svg-title"},h),...i.map(([y,j])=>l.createElement(y,j)),...Array.isArray(c)?c:[c]]));return d.displayName=`${t}`,d};/**
+ */const o=(r,s,t,i)=>{const d=l.forwardRef(({color:m="currentColor",size:p=24,stroke:v=2,title:h,className:f,children:c,...w},u)=>l.createElement("svg",{ref:u,...C[r],width:p,height:p,className:["tabler-icon",`tabler-icon-${s}`,f].join(" "),strokeWidth:v,stroke:m,...w},[h&&l.createElement("title",{key:"svg-title"},h),...i.map(([j,y])=>l.createElement(j,y)),...Array.isArray(c)?c:[c]]));return d.displayName=`${t}`,d};/**
  * @license @tabler/icons-react v3.31.0 - MIT
  *
  * This source code is licensed under the MIT license.
@@ -42,27 +42,27 @@ import{r as l,j as e,n,R as k}from"./index-CGM-0lsc.js";import{g as M,L as I}fro
   font-size: 16px;
   font-weight: 300;
   padding-top: calc(50svh - 96px);
-`,D=()=>e.jsx(L,{children:"사진이 존재하지 않습니다."}),q=n.img`
+`,D=()=>e.jsx(L,{children:"사진이 존재하지 않습니다."}),F=n.img`
   width: 100%;
   max-height: 100vmin;
   object-fit: contain;
-`,A=n.div`
+`,q=n.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`,B=n.div`
+`,A=n.div`
   width: 100%;
   max-width: 1200px;
   padding: 64px 2em;
   color: white;
-`,N=n.div`
+`,B=n.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px;
-`,S=n.div`
+`,N=n.div`
   font-weight: 700;
   font-size: 2em;
 `,g=n.div`
@@ -84,7 +84,7 @@ import{r as l,j as e,n,R as k}from"./index-CGM-0lsc.js";import{g as M,L as I}fro
   flex-direction: row;
   align-items: center;
   gap: 4px;
-`,F=n.div`
+`,S=n.div`
   font-weight: 400;
   font-size: 1em;
   color: #c6c6c6;
@@ -94,4 +94,4 @@ import{r as l,j as e,n,R as k}from"./index-CGM-0lsc.js";import{g as M,L as I}fro
   gap: 4px;
   word-break: keep-all;
   line-height: 1.4em;
-`,P=r=>{const{itemId:s}=r,t=M.find(i=>i.id===s);return t?e.jsxs(e.Fragment,{children:[e.jsx(q,{src:"https://pub-ff8a0fbd3b564db39a4670376b4d99de.r2.dev"+t.image[0]}),e.jsx(A,{children:e.jsxs(B,{children:[e.jsxs(N,{children:[e.jsx(S,{children:t.title})," ",e.jsxs(x,{children:[e.jsxs(a,{children:[e.jsx(b,{size:"1.2em"})," ",t.date.toLocaleDateString()]}),t.author&&e.jsxs(a,{children:[e.jsx(T,{size:"1.2em"})," ",t.author]}),t.location&&e.jsxs(a,{children:[e.jsx(E,{size:"1.2em"})," ",t.location]})]})]}),e.jsx(g,{}),(t.equipments||t.softwares)&&e.jsxs(x,{children:[t.equipments&&t.equipments.map(i=>e.jsxs(a,{children:[e.jsx(R,{size:"1.2em"})," ",i]})),t.softwares&&t.softwares.map(i=>e.jsxs(a,{children:[e.jsx(z,{size:"1.2em"})," ",i]}))]}),e.jsx(g,{}),t.description&&e.jsx(F,{children:t.description})]})})]}):e.jsx(D,{})},$=function(){const{itemId:s}=k.useParams();return e.jsx(I,{children:e.jsx(P,{itemId:s})})};export{$ as component};
+`,P=r=>{const{itemId:s}=r,t=M.find(i=>i.id===s);return t?e.jsxs(e.Fragment,{children:[e.jsx(F,{src:"https://pub-ff8a0fbd3b564db39a4670376b4d99de.r2.dev"+t.image[0]}),e.jsx(q,{children:e.jsxs(A,{children:[e.jsxs(B,{children:[e.jsx(N,{children:t.title})," ",e.jsxs(x,{children:[e.jsxs(a,{children:[e.jsx(b,{size:"1.2em"})," ",t.date.toLocaleDateString()]}),t.author&&e.jsxs(a,{children:[e.jsx(T,{size:"1.2em"})," ",t.author]}),t.location&&e.jsxs(a,{children:[e.jsx(E,{size:"1.2em"})," ",t.location]})]})]}),(t.equipments||t.softwares)&&e.jsxs(e.Fragment,{children:[e.jsx(g,{}),e.jsxs(x,{children:[t.equipments&&t.equipments.map(i=>e.jsxs(a,{children:[e.jsx(R,{size:"1.2em"})," ",i]})),t.softwares&&t.softwares.map(i=>e.jsxs(a,{children:[e.jsx(z,{size:"1.2em"})," ",i]}))]})]}),t.description&&e.jsxs(e.Fragment,{children:[e.jsx(g,{}),e.jsx(S,{children:t.description})]})]})})]}):e.jsx(D,{})},$=function(){const{itemId:s}=k.useParams();return e.jsx(I,{children:e.jsx(P,{itemId:s})})};export{$ as component};
