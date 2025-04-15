@@ -121,11 +121,27 @@ export const galleryItems: GalleryItem[] = [
     location: "벗고개",
   },
   {
+    id: "20201216_ngc253_sculptor_galaxy",
+    title: "20201216 조각가자리 은하",
+    thumbnail: "/20201216_ngc253_sculptor_galaxy_thumbnail.png",
+    image: ["/20201216_ngc253_sculptor_galaxy.png"],
+    date: new Date("2020-12-16"),
+    author: "16 컴퓨터학과 이건우",
+  },
+  {
     id: "20180717_galaxy",
     title: "20180717 은하수",
     thumbnail: "/20180717_galaxy_thumbnail.png",
     image: ["/20180717_galaxy.png"],
     date: new Date("2018-07-17"),
+    author: "16 컴퓨터학과 이건우",
+  },
+  {
+    id: "20170503_galaxy",
+    title: "20170503 은하수",
+    thumbnail: "/20170503_galaxy_thumbnail.png",
+    image: ["/20170503_galaxy.png"],
+    date: new Date("2017-05-03"),
     author: "16 컴퓨터학과 이건우",
   },
 ];
