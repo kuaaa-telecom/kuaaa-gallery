@@ -1,6 +1,32 @@
 import styled from "@emotion/styled";
+import { UseNavigateResult } from "@tanstack/react-router";
+import { useEffect, useMemo, useState } from "react";
 import { GalleryItem } from "../../types/galleryItem";
 import GalleryImageLink from "./GalleryImageLink";
+
+const MainContainer = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2em;
+`;
+
+const Space = styled.div<{ $width?: string; $height?: string }>`
+  width: ${(props) => props.$width};
+  height: ${(props) => props.$height};
+`;
+
+const Searchbar = styled.input`
+  width: 100%;
+  height: auto;
+  line-height: normal;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0.8em 0.5em;
+  background: #282828;
+  color: white;
+  border-bottom: 1px solid white;
+`;
 
 const GalleryGrid = styled.ul`
   display: grid;
@@ -21,15 +47,82 @@ const GalleryGrid = styled.ul`
 
 interface GalleryProps {
   items: GalleryItem[];
+  queryParam: string;
+  navigate: UseNavigateResult<"/kuaaa-gallery">;
 }
 
-const Gallery = ({ items }: GalleryProps) => {
+const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
+  const [query, setQuery] = useState<string>(queryParam);
+
+  const throttledSetQuery = useMemo(() => {
+    let timeout: number;
+    return (value: string) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => setQuery(value), 200);
+    };
+  }, []);
+
+  const throttledUpdateURL = useMemo(() => {
+    let timeout: number;
+    return () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        if (query) {
+          navigate({
+            search: { query },
+          });
+        } else {
+          navigate({
+            to: import.meta.env.BASE_URL,
+            search: { query: "" },
+          });
+        }
+      }, 200);
+    };
+  }, [navigate, query]);
+
+  useEffect(() => {
+    throttledUpdateURL();
+  }, [query, throttledUpdateURL]);
+
+  const filteredItems = useMemo(() => {
+    return items.filter((item) => {
+      if (!query) return true;
+      const queryIncludes =
+        item.title.includes(query) ||
+        item.author?.includes(query) ||
+        item.description?.includes(query) ||
+        item.equipments?.some((x) => {
+          if (x.includes(query)) return true;
+        }) ||
+        item.softwares?.some((x) => {
+          if (x.includes(query)) return true;
+        }) ||
+        item.location?.includes(query);
+      return queryIncludes;
+    });
+  }, [items, query]);
+
+  console.log(filteredItems);
+
   return (
-    <GalleryGrid>
-      {items.map((item) => (
-        <GalleryImageLink item={item} key={item.id} />
-      ))}
-    </GalleryGrid>
+    <>
+      <MainContainer>
+        <Space $height="80px" />
+        <Searchbar
+          type="text"
+          placeholder="찾아보기"
+          defaultValue={queryParam}
+          onChange={(e) => throttledSetQuery(e.target.value)}
+        />
+        <Space $height="80px" />
+      </MainContainer>
+      <GalleryGrid>
+        {filteredItems.map((item) => (
+          <GalleryImageLink item={item} key={item.id} />
+        ))}
+      </GalleryGrid>
+    </>
   );
 };
 
