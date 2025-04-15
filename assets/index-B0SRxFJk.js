@@ -1,4 +1,4 @@
-import{u as $,r as a,j as e,n as s,L as M,R as v,a as G}from"./index-BDaL7SKN.js";import{c as k,L as C,g as T}from"./galleryItems-BLsg7KiH.js";/**
+import{u as $,r as a,j as e,n as s,L as M,R as v,a as G}from"./index-Dgur7UYY.js";import{c as k,L as C,g as T}from"./galleryItems-7_IRYWF0.js";/**
  * @license @tabler/icons-react v3.31.0 - MIT
  *
  * This source code is licensed under the MIT license.
@@ -88,7 +88,7 @@ import{u as $,r as a,j as e,n as s,L as M,R as v,a as G}from"./index-BDaL7SKN.js
   border-bottom: 1px solid white;
 `,B=s.div`
   position: absolute;
-  right: 0;
+  right: 2em;
   display: flex;
   flex-direction: row;
   align-items: center;
