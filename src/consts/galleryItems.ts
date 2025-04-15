@@ -160,4 +160,11 @@ export const galleryItems: GalleryItem[] = [
     date: new Date("2017-05-03"),
     author: "16 컴퓨터학과 이건우",
   },
+  {
+    id: "IC434_combination",
+    title: "말머리 성운",
+    thumbnail: "/IC434_combination_thumbnail.png",
+    image: ["/IC434_combination.png"],
+    author: "16 컴퓨터학과 이건우",
+  },
 ];

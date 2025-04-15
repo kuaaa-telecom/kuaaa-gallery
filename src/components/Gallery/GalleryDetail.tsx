@@ -98,9 +98,12 @@ const GalleryDetail = (props: { itemId: string }) => {
           <ImageTitleContainer>
             <ImageTitle>{item.title}</ImageTitle>{" "}
             <TagBox>
-              <TagContainer>
-                <IconCalendar size={"1.2em"} /> {item.date.toLocaleDateString()}
-              </TagContainer>
+              {item.date && (
+                <TagContainer>
+                  <IconCalendar size={"1.2em"} />
+                  {item.date.toLocaleDateString()}
+                </TagContainer>
+              )}
               {item.author && (
                 <TagContainer>
                   <IconUser size={"1.2em"} /> {item.author}

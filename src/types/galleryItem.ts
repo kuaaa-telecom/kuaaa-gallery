@@ -3,7 +3,7 @@ export interface GalleryItem {
   title: string;
   thumbnail: string;
   image: string[];
-  date: Date;
+  date?: Date;
   author?: string;
   description?: string;
   equipments?: string[];
