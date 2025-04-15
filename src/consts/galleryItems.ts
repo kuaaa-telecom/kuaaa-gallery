@@ -215,7 +215,7 @@ export const galleryItems: GalleryItem[] = [
     thumbnail: "/20230524_trifid_lagoon_thumbnail.png",
     image: ["/20230524_trifid_lagoon.png"],
     date: new Date("2023-05-24"),
-    author: "22 컴퓨터학과 윤우찬",
+    author: "21 컴퓨터학과 윤우찬",
   },
   {
     id: "20231111_pleiades",
@@ -223,7 +223,7 @@ export const galleryItems: GalleryItem[] = [
     thumbnail: "/20231111_pleiades_thumbnail.png",
     image: ["/20231111_pleiades.png"],
     date: new Date("2023-11-11"),
-    author: "22 컴퓨터학과 윤우찬",
+    author: "21 컴퓨터학과 윤우찬",
   },
   {
     id: "20231112_orion",
@@ -232,7 +232,7 @@ export const galleryItems: GalleryItem[] = [
     thumbnail: "/20231112_orion_thumbnail.png",
     image: ["/20231112_orion.png"],
     date: new Date("2023-11-12"),
-    author: "22 컴퓨터학과 윤우찬",
+    author: "21 컴퓨터학과 윤우찬",
   },
   {
     id: "20231112_horse",
@@ -241,7 +241,7 @@ export const galleryItems: GalleryItem[] = [
     thumbnail: "/20231112_horse_thumbnail.png",
     image: ["/20231112_horse.png"],
     date: new Date("2023-11-12"),
-    author: "22 컴퓨터학과 윤우찬",
+    author: "21 컴퓨터학과 윤우찬",
   },
   {
     id: "20230513_sadr",
@@ -249,7 +249,7 @@ export const galleryItems: GalleryItem[] = [
     thumbnail: "/20230513_sadr_thumbnail.png",
     image: ["/20230513_sadr.png"],
     date: new Date("2023-05-13"),
-    author: "22 컴퓨터학과 윤우찬",
+    author: "21 컴퓨터학과 윤우찬",
   },
   {
     id: "20231203_fetus",
@@ -257,7 +257,7 @@ export const galleryItems: GalleryItem[] = [
     thumbnail: "/20231203_fetus_thumbnail.png",
     image: ["/20231203_fetus.png"],
     date: new Date("2023-12-03"),
-    author: "22 컴퓨터학과 윤우찬",
+    author: "21 컴퓨터학과 윤우찬",
   },
   {
     id: "20231203_rosetta",
@@ -265,7 +265,7 @@ export const galleryItems: GalleryItem[] = [
     thumbnail: "/20231203_rosetta_thumbnail.png",
     image: ["/20231203_rosetta.png"],
     date: new Date("2023-12-03"),
-    author: "22 컴퓨터학과 윤우찬",
+    author: "21 컴퓨터학과 윤우찬",
   },
   {
     id: "20240204_leo_triplet",
@@ -273,7 +273,7 @@ export const galleryItems: GalleryItem[] = [
     thumbnail: "/20240204_leo_triplet_thumbnail.png",
     image: ["/20240204_leo_triplet.png"],
     date: new Date("2024-02-04"),
-    author: "22 컴퓨터학과 윤우찬",
+    author: "21 컴퓨터학과 윤우찬",
   },
   {
     id: "20250120_galaxy",
@@ -281,7 +281,7 @@ export const galleryItems: GalleryItem[] = [
     thumbnail: "/20250120_galaxy_thumbnail.png",
     image: ["/20250120_galaxy.png"],
     date: new Date("2025-01-20"),
-    author: "22 컴퓨터학과 윤우찬",
+    author: "21 컴퓨터학과 윤우찬",
   },
   {
     id: "20250330_whirlpool",
@@ -289,6 +289,6 @@ export const galleryItems: GalleryItem[] = [
     thumbnail: "/20250330_whirlpool_thumbnail.png",
     image: ["/20250330_whirlpool.png"],
     date: new Date("2025-03-30"),
-    author: "22 컴퓨터학과 윤우찬",
+    author: "21 컴퓨터학과 윤우찬",
   },
 ];
