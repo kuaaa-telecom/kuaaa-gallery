@@ -36,15 +36,15 @@ const SortContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 300;
   color: white;
   gap: 8px;
 `;
 
 const SortIcon = styled.div`
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,11 +154,11 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
         <SortContainer>
           {sort === "asc" ? (
             <SortIcon>
-              <IconArrowUp size={16} onClick={() => setSort("desc")} />
+              <IconArrowUp size={24} onClick={() => setSort("desc")} />
             </SortIcon>
           ) : (
             <SortIcon>
-              <IconArrowDown size={16} onClick={() => setSort("asc")} />
+              <IconArrowDown size={24} onClick={() => setSort("asc")} />
             </SortIcon>
           )}
           촬영일
