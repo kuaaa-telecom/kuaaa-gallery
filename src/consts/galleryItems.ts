@@ -120,4 +120,12 @@ export const galleryItems: GalleryItem[] = [
     softwares: ["Siril"],
     location: "벗고개",
   },
+  {
+    id: "20180717_galaxy",
+    title: "20180717 은하수",
+    thumbnail: "/20180717_galaxy_thumbnail.png",
+    image: ["/20180717_galaxy.png"],
+    date: new Date("2018-07-17"),
+    author: "16 컴퓨터학과 이건우",
+  },
 ];

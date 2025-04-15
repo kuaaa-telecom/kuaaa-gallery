@@ -113,25 +113,31 @@ const GalleryDetail = (props: { itemId: string }) => {
               )}
             </TagBox>
           </ImageTitleContainer>
-          <Divider />
           {(item.equipments || item.softwares) && (
-            <TagBox>
-              {item.equipments &&
-                item.equipments.map((equipment) => (
-                  <TagContainer>
-                    <IconTelescope size={"1.2em"} /> {equipment}
-                  </TagContainer>
-                ))}
-              {item.softwares &&
-                item.softwares.map((software) => (
-                  <TagContainer>
-                    <IconEdit size={"1.2em"} /> {software}
-                  </TagContainer>
-                ))}
-            </TagBox>
+            <>
+              <Divider />
+              <TagBox>
+                {item.equipments &&
+                  item.equipments.map((equipment) => (
+                    <TagContainer>
+                      <IconTelescope size={"1.2em"} /> {equipment}
+                    </TagContainer>
+                  ))}
+                {item.softwares &&
+                  item.softwares.map((software) => (
+                    <TagContainer>
+                      <IconEdit size={"1.2em"} /> {software}
+                    </TagContainer>
+                  ))}
+              </TagBox>
+            </>
           )}
-          <Divider />
-          {item.description && <Description>{item.description}</Description>}
+          {item.description && (
+            <>
+              <Divider />
+              <Description>{item.description}</Description>
+            </>
+          )}
         </ImageInfoContainer>
       </PageContainer>
     </>
