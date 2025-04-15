@@ -7,6 +7,9 @@ const gloablStyle = css`
   * {
     box-sizing: border-box;
   }
+  body {
+    background-color: #282828;
+  }
 `;
 
 export default gloablStyle;
