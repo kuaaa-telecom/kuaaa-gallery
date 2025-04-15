@@ -6,6 +6,7 @@ const gloablStyle = css`
   ${emotionReset}
   input {
     all: unset;
+    box-sizing: border-box;
   }
   * {
     box-sizing: border-box;

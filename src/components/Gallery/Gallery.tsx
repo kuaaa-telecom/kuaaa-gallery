@@ -32,7 +32,7 @@ const Searchbar = styled.input`
 
 const SortContainer = styled.div`
   position: absolute;
-  right: 0;
+  right: 2em;
   display: flex;
   flex-direction: row;
   align-items: center;
