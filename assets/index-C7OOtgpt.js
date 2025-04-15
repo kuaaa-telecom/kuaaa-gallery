@@ -1,4 +1,4 @@
-import{u as $,r as a,j as e,n as s,L as M,R as v,a as G}from"./index-Dgur7UYY.js";import{c as k,L as C,g as T}from"./galleryItems-7_IRYWF0.js";/**
+import{u as $,r as a,j as e,n as s,L as M,R as v,a as G}from"./index-CWRIeRy6.js";import{c as k,L as C,g as T}from"./galleryItems-BeofHaBJ.js";/**
  * @license @tabler/icons-react v3.31.0 - MIT
  *
  * This source code is licensed under the MIT license.
@@ -96,7 +96,6 @@ import{u as $,r as a,j as e,n as s,L as M,R as v,a as G}from"./index-Dgur7UYY.js
   font-weight: 300;
   color: white;
   gap: 8px;
-  padding: 0.8em 0.5em;
 `,I=s.div`
   width: 36px;
   height: 36px;
