@@ -129,6 +129,14 @@ export const galleryItems: GalleryItem[] = [
     author: "16 컴퓨터학과 이건우",
   },
   {
+    id: "20201025_IC434_horse",
+    title: "20201025 말머리 성운",
+    thumbnail: "/20201025_IC434_horse_thumbnail.png",
+    image: ["/20201025_IC434_horse.png"],
+    date: new Date("2020-10-25"),
+    author: "16 컴퓨터학과 이건우",
+  },
+  {
     id: "20180717_galaxy",
     title: "20180717 은하수",
     thumbnail: "/20180717_galaxy_thumbnail.png",
@@ -158,13 +166,6 @@ export const galleryItems: GalleryItem[] = [
     thumbnail: "/20170503_galaxy_thumbnail.png",
     image: ["/20170503_galaxy.png"],
     date: new Date("2017-05-03"),
-    author: "16 컴퓨터학과 이건우",
-  },
-  {
-    id: "IC434_combination",
-    title: "말머리 성운",
-    thumbnail: "/IC434_combination_thumbnail.png",
-    image: ["/IC434_combination.png"],
     author: "16 컴퓨터학과 이건우",
   },
 ];
