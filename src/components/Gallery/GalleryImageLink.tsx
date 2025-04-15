@@ -94,7 +94,8 @@ const GalleryImageLink = ({ item }: Props) => {
         image.onload = () => {
           setImageShown(true);
         };
-        image.src = import.meta.env.BASE_URL + item.thumbnail;
+        image.src =
+          import.meta.env.VITE_CLOUDFLARE_R2_BUCKET_URL + item.thumbnail;
       }
     });
     return () => {
@@ -110,7 +111,7 @@ const GalleryImageLink = ({ item }: Props) => {
         <GalleryImageContainer
           style={{
             ...(imageShown && {
-              backgroundImage: `url(${import.meta.env.BASE_URL}${item.thumbnail})`,
+              backgroundImage: `url(${import.meta.env.VITE_CLOUDFLARE_R2_BUCKET_URL}${item.thumbnail})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               opacity: 1,

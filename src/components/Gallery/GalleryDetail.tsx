@@ -90,7 +90,9 @@ const GalleryDetail = (props: { itemId: string }) => {
 
   return (
     <>
-      <MainImage src={import.meta.env.BASE_URL + item.image[0]} />
+      <MainImage
+        src={import.meta.env.VITE_CLOUDFLARE_R2_BUCKET_URL + item.image[0]}
+      />
       <PageContainer>
         <ImageInfoContainer>
           <ImageTitleContainer>
