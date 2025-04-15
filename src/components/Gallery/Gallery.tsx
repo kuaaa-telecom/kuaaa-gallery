@@ -40,6 +40,7 @@ const SortContainer = styled.div`
   font-weight: 300;
   color: white;
   gap: 8px;
+  padding: 0.8em 0.5em;
 `;
 
 const SortIcon = styled.div`
