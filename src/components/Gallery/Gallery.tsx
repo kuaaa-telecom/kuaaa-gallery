@@ -80,7 +80,6 @@ interface GalleryProps {
 
 const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
   const [query, setQuery] = useState<string>(queryParam);
-  const [sortBy] = useState<string>("date");
   const [sort, setSort] = useState<string>("desc");
 
   const throttledSetQuery = useMemo(() => {
