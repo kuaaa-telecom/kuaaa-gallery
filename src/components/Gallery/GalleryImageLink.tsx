@@ -73,6 +73,7 @@ const GalleryImageContainer = styled.span`
 
 const GalleryItemTitleText = styled.span`
   font-size: 16px;
+  word-break: keep-all;
 `;
 
 interface Props {

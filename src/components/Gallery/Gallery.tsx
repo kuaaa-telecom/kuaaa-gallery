@@ -1,8 +1,17 @@
 import styled from "@emotion/styled";
-import { IconArrowDown, IconArrowUp } from "@tabler/icons-react";
+import {
+  IconArrowDown,
+  IconArrowUp,
+  IconChevronUp,
+  IconDotsVertical,
+  IconMap,
+  IconTelescope,
+  IconUser,
+} from "@tabler/icons-react";
 import { UseNavigateResult } from "@tanstack/react-router";
+import _ from "lodash";
 import { useEffect, useMemo, useState } from "react";
-import { GalleryItem } from "../../types/galleryItem";
+import { GalleryItem, GalleryTagType } from "../../types/galleryItem";
 import { normalizeQuery } from "../../utils/normalize";
 import GalleryImageLink from "./GalleryImageLink";
 
@@ -12,6 +21,7 @@ const MainContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2em;
+  color: white;
 `;
 
 const Space = styled.div<{ $width?: string; $height?: string }>`
@@ -19,16 +29,66 @@ const Space = styled.div<{ $width?: string; $height?: string }>`
   height: ${(props) => props.$height};
 `;
 
-const Searchbar = styled.input`
+const SearchbarConatiner = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+`;
+
+const Searchbar = styled.input`
   height: auto;
   line-height: normal;
   font-size: 1rem;
   font-weight: 300;
   padding: 0.8em 0.5em;
   background: #282828;
-  color: white;
   border-bottom: 1px solid white;
+  flex-grow: 1;
+`;
+
+const TagContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+`;
+
+const TagArrowIcon = styled.div`
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+
+  &:hover {
+    background-color: #ffffff35;
+  }
+`;
+
+const TagBox = styled.div<{ $selected?: boolean }>`
+  padding: 8px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  font-size: 1rem;
+  gap: 4px;
+  user-select: none;
+  color: ${(props) => (props.$selected ? "white" : "#8f8f8f")};
+  background-color: ${(props) => (props.$selected ? "#ffffff55" : "none")};
+
+  &:hover {
+    background-color: ${(props) =>
+      props.$selected ? "#ffffff55" : "#ffffff27"};
+  }
 `;
 
 const SortContainer = styled.div`
@@ -39,7 +99,6 @@ const SortContainer = styled.div`
   align-items: center;
   font-size: 1rem;
   font-weight: 300;
-  color: white;
   gap: 8px;
 `;
 
@@ -83,6 +142,9 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
   const [query, setQuery] = useState<string>(queryParam);
   const [sort, setSort] = useState<string>("desc");
 
+  const [isTagExpaned, setIsTagExpaned] = useState<boolean>(false);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
   const throttledSetQuery = useMemo(() => {
     let timeout: number;
     return (value: string) => {
@@ -114,24 +176,64 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
     throttledUpdateURL();
   }, [query, throttledUpdateURL]);
 
+  const tags = useMemo(() => {
+    const ret: { type: GalleryTagType; label: string }[] = [];
+    items.forEach((item) => {
+      if (item.author) {
+        ret.push({ type: "author", label: item.author });
+      }
+      ret.push(
+        ...(item.equipments ?? []).map(
+          (x): { type: GalleryTagType; label: string } => {
+            return { type: "equipment", label: x };
+          }
+        )
+      );
+      ret.push(
+        ...(item.softwares ?? []).map(
+          (x): { type: GalleryTagType; label: string } => {
+            return { type: "software", label: x };
+          }
+        )
+      );
+      if (item.location) {
+        ret.push({ type: "location", label: item.location ?? "" });
+      }
+    });
+    return _.uniqBy(ret, "label").toSorted((a, b) =>
+      `${a.type}$${a.label}`.localeCompare(`${b.type}$${b.label}`)
+    );
+  }, [items]);
+
+  const isItemIncludesTags = (item: GalleryItem, tagsToFilter: string[]) =>
+    tagsToFilter.includes(item.author ?? "") ||
+    item.equipments?.some((x) => tagsToFilter.includes(x)) ||
+    item.softwares?.some((x) => tagsToFilter.includes(x)) ||
+    tagsToFilter.includes(item.location ?? "");
+
   const filteredItems = useMemo(() => {
     const normalizedQuery = normalizeQuery(query);
-    return items.filter((item) => {
-      if (!normalizedQuery) return true;
-      const queryIncludes =
-        normalizeQuery(item.title).includes(normalizedQuery) ||
-        normalizeQuery(item.author ?? "").includes(normalizedQuery) ||
-        normalizeQuery(item.description ?? "").includes(normalizedQuery) ||
-        item.equipments?.some((x) =>
-          normalizeQuery(x).includes(normalizedQuery)
-        ) ||
-        item.softwares?.some((x) =>
-          normalizeQuery(x).includes(normalizedQuery)
-        ) ||
-        item.location?.includes(normalizedQuery);
-      return queryIncludes;
-    });
-  }, [items, query]);
+    return items
+      .filter((item) => {
+        if (!normalizedQuery) return true;
+        const queryIncludes =
+          normalizeQuery(item.title).includes(normalizedQuery) ||
+          normalizeQuery(item.author ?? "").includes(normalizedQuery) ||
+          normalizeQuery(item.description ?? "").includes(normalizedQuery) ||
+          item.equipments?.some((x) =>
+            normalizeQuery(x).includes(normalizedQuery)
+          ) ||
+          item.softwares?.some((x) =>
+            normalizeQuery(x).includes(normalizedQuery)
+          ) ||
+          item.location?.includes(normalizedQuery);
+        return queryIncludes;
+      })
+      .filter(
+        (item) =>
+          selectedTags.length === 0 || isItemIncludesTags(item, selectedTags)
+      );
+  }, [items, query, selectedTags]);
 
   const sortedItems = useMemo(() => {
     const sortedAscending = filteredItems.toSorted(
@@ -140,19 +242,71 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
     return sort === "asc" ? sortedAscending : sortedAscending.reverse();
   }, [filteredItems, sort]);
 
-  console.log(filteredItems);
+  const isTagSelected = (label: string) => selectedTags.includes(label);
+
+  const countItemForTag = (label: string) =>
+    items.filter((item) => isItemIncludesTags(item, [label])).length;
+
+  const renderTag = (type: GalleryTagType) => {
+    switch (type) {
+      case "author":
+        return <IconUser size={"1.2em"} />;
+      case "equipment":
+      case "software":
+        return <IconTelescope size={"1.2em"} />;
+      case "location":
+        return <IconMap size={"1.2em"} />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <>
       <MainContainer>
         <Space $height="80px" />
-        <Searchbar
-          type="text"
-          placeholder="찾아보기"
-          defaultValue={queryParam}
-          onChange={(e) => throttledSetQuery(e.target.value)}
-        />
-        <Space $height="80px" />
+        <SearchbarConatiner>
+          <Searchbar
+            type="text"
+            placeholder="찾아보기"
+            defaultValue={queryParam}
+            onChange={(e) => throttledSetQuery(e.target.value)}
+          />
+          {isTagExpaned ? (
+            <TagArrowIcon>
+              <IconChevronUp size={24} onClick={() => setIsTagExpaned(false)} />
+            </TagArrowIcon>
+          ) : (
+            <TagArrowIcon>
+              <IconDotsVertical
+                size={24}
+                onClick={() => setIsTagExpaned(true)}
+              />
+            </TagArrowIcon>
+          )}
+        </SearchbarConatiner>
+        <Space $height="48px" />
+        {isTagExpaned && (
+          <TagContainer>
+            {tags.map((tag) => (
+              <TagBox
+                $selected={isTagSelected(tag.label)}
+                onClick={() =>
+                  setSelectedTags((prev) =>
+                    prev.includes(tag.label)
+                      ? prev.filter((t) => t !== tag.label)
+                      : [...prev, tag.label]
+                  )
+                }
+                key={tag.label}
+              >
+                {renderTag(tag.type)}
+                {`${tag.label} (${countItemForTag(tag.label)})`}
+              </TagBox>
+            ))}
+          </TagContainer>
+        )}
+        <Space $height="24px" />
         <SortContainer>
           {sort === "asc" ? (
             <SortIcon>

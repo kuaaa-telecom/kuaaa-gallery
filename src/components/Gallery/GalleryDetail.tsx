@@ -122,13 +122,13 @@ const GalleryDetail = (props: { itemId: string }) => {
               <TagBox>
                 {item.equipments &&
                   item.equipments.map((equipment) => (
-                    <TagContainer>
+                    <TagContainer key={equipment}>
                       <IconTelescope size={"1.2em"} /> {equipment}
                     </TagContainer>
                   ))}
                 {item.softwares &&
                   item.softwares.map((software) => (
-                    <TagContainer>
+                    <TagContainer key={software}>
                       <IconEdit size={"1.2em"} /> {software}
                     </TagContainer>
                   ))}

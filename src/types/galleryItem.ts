@@ -10,3 +10,5 @@ export interface GalleryItem {
   softwares?: string[];
   location?: string;
 }
+
+export type GalleryTagType = "author" | "equipment" | "software" | "location";
