@@ -72,7 +72,7 @@ const GalleryImageContainer = styled.span`
 `;
 
 const GalleryItemTitleText = styled.span`
-  font-size: 16px;
+  font-size: 1rem;
   word-break: keep-all;
 `;
 

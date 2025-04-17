@@ -4,6 +4,8 @@ import {
   IconArrowUp,
   IconChevronUp,
   IconDotsVertical,
+  IconGridDots,
+  IconLayoutGrid,
   IconMap,
   IconPhoto,
   IconTelescope,
@@ -99,6 +101,21 @@ const TagBox = styled.div<{ $selected?: boolean }>`
   }
 `;
 
+const GridIconContainer = styled.div`
+  position: absolute;
+  left: 2em;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+
+  &:hover {
+    background-color: #ffffff35;
+  }
+`;
+
 const SortContainer = styled.div`
   position: absolute;
   right: 2em;
@@ -123,21 +140,25 @@ const SortIcon = styled.div`
   }
 `;
 
-const GalleryGrid = styled.ul`
+const GalleryGrid = styled.ul<{ $gridView: "small" | "large" }>`
   display: grid;
   list-style: none;
   padding: 0;
   margin: 0;
-  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  grid-template-columns: ${(props) =>
+    `repeat(auto-fill, minmax(${props.$gridView === "large" ? "480px" : "240px"}, 1fr))`};
 
   @media (max-width: 1920px) {
-    grid-template-columns: repeat(4, 1fr); /* 240px - 480px */
+    grid-template-columns: ${(props) =>
+      `repeat(${props.$gridView === "large" ? 4 : 6}, 1fr)`};
   }
   @media (max-width: 960px) {
-    grid-template-columns: repeat(3, 1fr); /* 180px - 320px */
+    grid-template-columns: ${(props) =>
+      `repeat(${props.$gridView === "large" ? 3 : 5}, 1fr)`};
   }
   @media (max-width: 540px) {
-    grid-template-columns: repeat(2, 1fr); /* 0px - 270px */
+    grid-template-columns: ${(props) =>
+      `repeat(${props.$gridView === "large" ? 2 : 4}, 1fr)`};
   }
 `;
 
@@ -159,7 +180,9 @@ interface GalleryProps {
 
 const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
   const [query, setQuery] = useState<string>(queryParam);
+
   const [sort, setSort] = useState<string>("desc");
+  const [gridView, setGridView] = useState<"small" | "large">("large");
 
   const [sortedItems, setSortedItems] = useState<GalleryItem[]>(items);
 
@@ -337,6 +360,13 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
           </TagContainer>
         )}
         <Space $height="24px" />
+        <GridIconContainer>
+          {gridView === "large" ? (
+            <IconGridDots onClick={() => setGridView("small")} />
+          ) : (
+            <IconLayoutGrid onClick={() => setGridView("large")} />
+          )}
+        </GridIconContainer>
         <SortContainer>
           {sort === "asc" ? (
             <SortIcon>
@@ -352,7 +382,10 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
         <Space $height="80px" />
       </MainContainer>
       {sortedItems.length > 0 ? (
-        <GalleryGrid style={{ viewTransitionName: "gallery" }}>
+        <GalleryGrid
+          $gridView={gridView}
+          style={{ viewTransitionName: "gallery" }}
+        >
           {sortedItems.map((item) => (
             <GalleryImageLink item={item} key={item.id} />
           ))}
