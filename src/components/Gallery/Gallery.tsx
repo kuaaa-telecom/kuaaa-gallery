@@ -125,6 +125,7 @@ const SortContainer = styled.div`
   font-size: 1rem;
   font-weight: 300;
   gap: 8px;
+  user-select: none;
 `;
 
 const SortIcon = styled.div`
@@ -362,9 +363,17 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
         <Space $height="24px" />
         <GridIconContainer>
           {gridView === "large" ? (
-            <IconGridDots onClick={() => setGridView("small")} />
+            <IconGridDots
+              onClick={() =>
+                document.startViewTransition(() => setGridView("small"))
+              }
+            />
           ) : (
-            <IconLayoutGrid onClick={() => setGridView("large")} />
+            <IconLayoutGrid
+              onClick={() =>
+                document.startViewTransition(() => setGridView("large"))
+              }
+            />
           )}
         </GridIconContainer>
         <SortContainer>
