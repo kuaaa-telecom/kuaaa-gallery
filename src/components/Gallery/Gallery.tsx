@@ -57,6 +57,11 @@ const TagContainer = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 16px;
+
+  @media (max-width: 540px) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
 `;
 
 const TagArrowIcon = styled.div`
@@ -84,6 +89,8 @@ const TagBox = styled.div<{ $selected?: boolean }>`
   user-select: none;
   color: ${(props) => (props.$selected ? "white" : "#8f8f8f")};
   background-color: ${(props) => (props.$selected ? "#ffffff55" : "none")};
+  word-break: keep-all;
+  white-space: nowrap;
 
   &:hover {
     background-color: ${(props) =>
