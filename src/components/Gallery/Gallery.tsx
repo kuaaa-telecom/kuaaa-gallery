@@ -5,6 +5,7 @@ import {
   IconChevronUp,
   IconDotsVertical,
   IconMap,
+  IconPhoto,
   IconTelescope,
   IconUser,
 } from "@tabler/icons-react";
@@ -216,6 +217,7 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
       if (item.location) {
         ret.push({ type: "location", label: item.location ?? "" });
       }
+      ret.push({ type: "type", label: item.type });
     });
     return _.uniqBy(ret, "label").toSorted((a, b) =>
       `${a.type}$${a.label}`.localeCompare(`${b.type}$${b.label}`)
@@ -226,7 +228,8 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
     tagsToFilter.includes(item.author ?? "") ||
     item.equipments?.some((x) => tagsToFilter.includes(x)) ||
     item.softwares?.some((x) => tagsToFilter.includes(x)) ||
-    tagsToFilter.includes(item.location ?? "");
+    tagsToFilter.includes(item.location ?? "") ||
+    tagsToFilter.includes(item.type ?? "");
 
   const filteredItems = useMemo(() => {
     const normalizedQuery = normalizeQuery(query);
@@ -243,7 +246,8 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
           item.softwares?.some((x) =>
             normalizeQuery(x).includes(normalizedQuery)
           ) ||
-          item.location?.includes(normalizedQuery);
+          item.location?.includes(normalizedQuery) ||
+          item.type.includes(normalizedQuery);
         return queryIncludes;
       })
       .filter(
@@ -273,6 +277,8 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
         return <IconTelescope size={"1.2em"} />;
       case "location":
         return <IconMap size={"1.2em"} />;
+      case "type":
+        return <IconPhoto size={"1.2em"} />;
       default:
         return null;
     }

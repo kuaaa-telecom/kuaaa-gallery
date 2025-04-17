@@ -1,3 +1,5 @@
+export type GalleryItemType = "딥스카이" | "점상" | "일주";
+
 export interface GalleryItem {
   id: string;
   title: string;
@@ -9,6 +11,12 @@ export interface GalleryItem {
   equipments?: string[];
   softwares?: string[];
   location?: string;
+  type: GalleryItemType;
 }
 
-export type GalleryTagType = "author" | "equipment" | "software" | "location";
+export type GalleryTagType =
+  | "author"
+  | "equipment"
+  | "software"
+  | "location"
+  | "type";

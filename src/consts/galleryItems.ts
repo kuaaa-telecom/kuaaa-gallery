@@ -16,6 +16,7 @@ export const galleryItems: GalleryItem[] = [
     ],
     softwares: ["Siril"],
     location: "진여울 펜션",
+    type: "딥스카이",
   },
   {
     id: "20250329_galaxy",
@@ -33,6 +34,7 @@ export const galleryItems: GalleryItem[] = [
     ],
     softwares: ["Siril"],
     location: "진여울 펜션",
+    type: "점상",
   },
   {
     id: "20250325_galaxy",
@@ -50,6 +52,7 @@ export const galleryItems: GalleryItem[] = [
     ],
     softwares: ["Siril"],
     location: "진여울 펜션",
+    type: "점상",
   },
   {
     id: "20250321_startrail",
@@ -68,6 +71,7 @@ export const galleryItems: GalleryItem[] = [
     ],
     softwares: ["StarStaX"],
     location: "홍천",
+    type: "일주",
   },
   {
     id: "20241223_andromeda",
@@ -85,6 +89,7 @@ export const galleryItems: GalleryItem[] = [
     ],
     softwares: ["Siril"],
     location: "진여울 펜션",
+    type: "딥스카이",
   },
   {
     id: "20241208_pleiades",
@@ -102,6 +107,7 @@ export const galleryItems: GalleryItem[] = [
     ],
     softwares: ["Siril"],
     location: "벗고개",
+    type: "딥스카이",
   },
   {
     id: "20241208_orion",
@@ -119,6 +125,7 @@ export const galleryItems: GalleryItem[] = [
     ],
     softwares: ["Siril"],
     location: "벗고개",
+    type: "점상",
   },
   {
     id: "20201216_ngc253_sculptor_galaxy",
@@ -127,6 +134,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20201216_ngc253_sculptor_galaxy.png"],
     date: new Date("2020-12-16"),
     author: "16 컴퓨터학과 이건우",
+    type: "딥스카이",
   },
   {
     id: "20201025_IC434_horse",
@@ -135,6 +143,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20201025_IC434_horse.png"],
     date: new Date("2020-10-25"),
     author: "16 컴퓨터학과 이건우",
+    type: "딥스카이",
   },
   {
     id: "20201025_IC2118_witch_head",
@@ -143,6 +152,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20201025_IC2118_witch_head.png"],
     date: new Date("2020-10-25"),
     author: "16 컴퓨터학과 이건우",
+    type: "딥스카이",
   },
   {
     id: "20200826_orion",
@@ -151,6 +161,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20200826_orion.png"],
     date: new Date("2020-08-26"),
     author: "16 컴퓨터학과 이건우",
+    type: "딥스카이",
   },
   {
     id: "20200826_pleiades",
@@ -159,6 +170,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20200826_pleiades.png"],
     date: new Date("2020-08-26"),
     author: "16 컴퓨터학과 이건우",
+    type: "딥스카이",
   },
   {
     id: "20200530_western_veil",
@@ -167,6 +179,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20200530_western_veil.png"],
     date: new Date("2020-05-30"),
     author: "16 컴퓨터학과 이건우",
+    type: "딥스카이",
   },
   {
     id: "20181104_rosetta",
@@ -175,6 +188,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20181104_rosetta.png"],
     date: new Date("2018-11-04"),
     author: "16 컴퓨터학과 이건우",
+    type: "딥스카이",
   },
   {
     id: "20180717_galaxy",
@@ -183,6 +197,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20180717_galaxy.png"],
     date: new Date("2018-07-17"),
     author: "16 컴퓨터학과 이건우",
+    type: "점상",
   },
   {
     id: "20180519_antares",
@@ -191,6 +206,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20180519_antares.png"],
     date: new Date("2018-05-19"),
     author: "16 컴퓨터학과 이건우",
+    type: "딥스카이",
   },
   {
     id: "20171021_pleiades",
@@ -199,6 +215,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20171021_pleiades.png"],
     date: new Date("2017-10-21"),
     author: "16 컴퓨터학과 이건우",
+    type: "딥스카이",
   },
   {
     id: "20170503_galaxy",
@@ -207,6 +224,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20170503_galaxy.png"],
     date: new Date("2017-05-03"),
     author: "16 컴퓨터학과 이건우",
+    type: "점상",
   },
   {
     id: "20230524_trifid_lagoon",
@@ -216,6 +234,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20230524_trifid_lagoon.png"],
     date: new Date("2023-05-24"),
     author: "21 컴퓨터학과 윤우찬",
+    type: "딥스카이",
   },
   {
     id: "20231111_pleiades",
@@ -224,6 +243,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20231111_pleiades.png"],
     date: new Date("2023-11-11"),
     author: "21 컴퓨터학과 윤우찬",
+    type: "딥스카이",
   },
   {
     id: "20231112_orion",
@@ -233,6 +253,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20231112_orion.png"],
     date: new Date("2023-11-12"),
     author: "21 컴퓨터학과 윤우찬",
+    type: "딥스카이",
   },
   {
     id: "20231112_horse",
@@ -242,6 +263,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20231112_horse.png"],
     date: new Date("2023-11-12"),
     author: "21 컴퓨터학과 윤우찬",
+    type: "딥스카이",
   },
   {
     id: "20230513_sadr",
@@ -250,6 +272,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20230513_sadr.png"],
     date: new Date("2023-05-13"),
     author: "21 컴퓨터학과 윤우찬",
+    type: "딥스카이",
   },
   {
     id: "20231203_fetus",
@@ -258,6 +281,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20231203_fetus.png"],
     date: new Date("2023-12-03"),
     author: "21 컴퓨터학과 윤우찬",
+    type: "딥스카이",
   },
   {
     id: "20231203_rosetta",
@@ -266,6 +290,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20231203_rosetta.png"],
     date: new Date("2023-12-03"),
     author: "21 컴퓨터학과 윤우찬",
+    type: "딥스카이",
   },
   {
     id: "20240204_leo_triplet",
@@ -274,6 +299,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20240204_leo_triplet.png"],
     date: new Date("2024-02-04"),
     author: "21 컴퓨터학과 윤우찬",
+    type: "딥스카이",
   },
   {
     id: "20250120_galaxy",
@@ -282,6 +308,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20250120_galaxy.png"],
     date: new Date("2025-01-20"),
     author: "21 컴퓨터학과 윤우찬",
+    type: "점상",
   },
   {
     id: "20250330_whirlpool",
@@ -290,6 +317,7 @@ export const galleryItems: GalleryItem[] = [
     image: ["/20250330_whirlpool.png"],
     date: new Date("2025-03-30"),
     author: "21 컴퓨터학과 윤우찬",
+    type: "딥스카이",
   },
   {
     id: "20200921_pleiades",
@@ -300,6 +328,7 @@ export const galleryItems: GalleryItem[] = [
     author: "14 컴퓨터학과 이수호",
     equipments: ["Sony a7R2", "ES ED80 FCD1 (480mm)"],
     location: "양구 B",
+    type: "딥스카이",
   },
   {
     id: "20200921_andromeda",
@@ -310,6 +339,7 @@ export const galleryItems: GalleryItem[] = [
     author: "14 컴퓨터학과 이수호",
     equipments: ["Sony a7R2", "ES ED80 FCD1 (480mm)"],
     location: "양구 B",
+    type: "딥스카이",
   },
   {
     id: "20200622_trifid_lagoon",
@@ -320,5 +350,6 @@ export const galleryItems: GalleryItem[] = [
     author: "14 컴퓨터학과 이수호",
     equipments: ["Sony a7R2", "ES ED80 FCD1 (480mm)"],
     location: "굴봉산",
+    type: "딥스카이",
   },
 ];
