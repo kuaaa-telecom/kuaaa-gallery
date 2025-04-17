@@ -3,6 +3,7 @@ import { IconArrowDown, IconArrowUp } from "@tabler/icons-react";
 import { UseNavigateResult } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { GalleryItem } from "../../types/galleryItem";
+import { normalizeQuery } from "../../utils/normalize";
 import GalleryImageLink from "./GalleryImageLink";
 
 const MainContainer = styled.div`
@@ -114,19 +115,20 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
   }, [query, throttledUpdateURL]);
 
   const filteredItems = useMemo(() => {
+    const normalizedQuery = normalizeQuery(query);
     return items.filter((item) => {
-      if (!query) return true;
+      if (!normalizedQuery) return true;
       const queryIncludes =
-        item.title.includes(query) ||
-        item.author?.includes(query) ||
-        item.description?.includes(query) ||
-        item.equipments?.some((x) => {
-          if (x.includes(query)) return true;
-        }) ||
-        item.softwares?.some((x) => {
-          if (x.includes(query)) return true;
-        }) ||
-        item.location?.includes(query);
+        normalizeQuery(item.title).includes(normalizedQuery) ||
+        normalizeQuery(item.author ?? "").includes(normalizedQuery) ||
+        normalizeQuery(item.description ?? "").includes(normalizedQuery) ||
+        item.equipments?.some((x) =>
+          normalizeQuery(x).includes(normalizedQuery)
+        ) ||
+        item.softwares?.some((x) =>
+          normalizeQuery(x).includes(normalizedQuery)
+        ) ||
+        item.location?.includes(normalizedQuery);
       return queryIncludes;
     });
   }, [items, query]);
