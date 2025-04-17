@@ -129,6 +129,7 @@ const GalleryGrid = styled.ul`
   padding: 0;
   margin: 0;
   grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+
   @media (max-width: 1920px) {
     grid-template-columns: repeat(4, 1fr); /* 240px - 480px */
   }
@@ -159,6 +160,8 @@ interface GalleryProps {
 const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
   const [query, setQuery] = useState<string>(queryParam);
   const [sort, setSort] = useState<string>("desc");
+
+  const [sortedItems, setSortedItems] = useState<GalleryItem[]>(items);
 
   const [isTagExpaned, setIsTagExpaned] = useState<boolean>(false);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -256,11 +259,15 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
       );
   }, [items, query, selectedTags]);
 
-  const sortedItems = useMemo(() => {
+  useEffect(() => {
     const sortedAscending = filteredItems.toSorted(
       (a, b) => (a.date?.getTime() || 0) - (b.date?.getTime() || 0)
     );
-    return sort === "asc" ? sortedAscending : sortedAscending.reverse();
+    document.startViewTransition(() =>
+      setSortedItems(
+        sort === "asc" ? sortedAscending : sortedAscending.reverse()
+      )
+    );
   }, [filteredItems, sort]);
 
   const isTagSelected = (label: string) => selectedTags.includes(label);
@@ -345,10 +352,13 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
         <Space $height="80px" />
       </MainContainer>
       {sortedItems.length > 0 ? (
-        <GalleryGrid>
+        <GalleryGrid style={{ viewTransitionName: "gallery" }}>
           {sortedItems.map((item) => (
             <GalleryImageLink item={item} key={item.id} />
           ))}
+          <style>{`
+            .* {view-transition-name: left-board;}
+          `}</style>
         </GalleryGrid>
       ) : (
         <>

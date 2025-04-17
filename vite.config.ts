@@ -9,4 +9,9 @@ export default defineConfig({
     react(),
   ],
   base: "/kuaaa-gallery/",
+  resolve: {
+    alias: {
+      "@tabler/icons-react": "@tabler/icons-react/dist/esm/icons/index.mjs",
+    },
+  },
 });

@@ -14,6 +14,44 @@ const gloablStyle = css`
   body {
     background-color: #282828;
   }
+
+  @keyframes move-in {
+    from {
+      transform: translateY(-8px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes move-out {
+    from {
+      transform: translateY(0);
+      opacity: 0.1;
+    }
+
+    to {
+      transform: translateY(8px);
+      opacity: 0;
+    }
+  }
+
+  ::view-transition-group(gallery) {
+    height: auto;
+  }
+
+  ::view-transition-old(gallery) {
+    animation: 0.4s ease-in both move-out;
+    transform-origin: 50% 0;
+  }
+
+  ::view-transition-new(gallery) {
+    animation: 0.4s ease-in both move-in;
+    transform-origin: 50% 0;
+  }
 `;
 
 export default gloablStyle;
