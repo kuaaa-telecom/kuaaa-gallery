@@ -1,4 +1,4 @@
-import{c as hr,g as _0,u as d0,r as yn,j as O,n as en,L as v0,R as _o,a as x0}from"./index-BWIUi_LV.js";import{c as gr,I as w0,a as m0,b as y0,L as A0,g as I0}from"./galleryItems-B841lVbJ.js";/**
+import{c as hr,g as _0,u as d0,r as yn,j as O,n as en,L as v0,R as _o,a as x0}from"./index-CIlds0A-.js";import{c as gr,I as w0,a as m0,b as y0,L as A0,g as I0}from"./galleryItems-BslFKk-x.js";/**
  * @license @tabler/icons-react v3.31.0 - MIT
  *
  * This source code is licensed under the MIT license.
@@ -138,6 +138,11 @@ function print() { __p += __j.call(arguments, '') }
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 16px;
+
+  @media (max-width: 540px) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
 `,wo=en.div`
   width: 36px;
   height: 36px;
@@ -161,6 +166,8 @@ function print() { __p += __j.call(arguments, '') }
   user-select: none;
   color: ${P=>P.$selected?"white":"#8f8f8f"};
   background-color: ${P=>P.$selected?"#ffffff55":"none"};
+  word-break: keep-all;
+  white-space: nowrap;
 
   &:hover {
     background-color: ${P=>P.$selected?"#ffffff55":"#ffffff27"};
