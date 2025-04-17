@@ -132,7 +132,7 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
   }, [items, query]);
 
   const sortedItems = useMemo(() => {
-    const sortedAscending = filteredItems.sort(
+    const sortedAscending = filteredItems.toSorted(
       (a, b) => (a.date?.getTime() || 0) - (b.date?.getTime() || 0)
     );
     return sort === "asc" ? sortedAscending : sortedAscending.reverse();
