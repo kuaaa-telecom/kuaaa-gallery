@@ -183,7 +183,7 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
   const [query, setQuery] = useState<string>(queryParam);
 
   const [sort, setSort] = useState<string>("desc");
-  const [gridView, setGridView] = useState<"small" | "large">("large");
+  const [gridView, setGridView] = useState<"small" | "large">("small");
 
   const [sortedItems, setSortedItems] = useState<GalleryItem[]>(items);
 
