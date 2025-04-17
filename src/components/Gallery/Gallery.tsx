@@ -132,6 +132,16 @@ const GalleryGrid = styled.ul`
   }
 `;
 
+const NotFoundContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cacaca;
+  font-size: 16px;
+  font-weight: 300;
+`;
+
 interface GalleryProps {
   items: GalleryItem[];
   queryParam: string;
@@ -321,11 +331,18 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
         </SortContainer>
         <Space $height="80px" />
       </MainContainer>
-      <GalleryGrid>
-        {sortedItems.map((item) => (
-          <GalleryImageLink item={item} key={item.id} />
-        ))}
-      </GalleryGrid>
+      {sortedItems.length > 0 ? (
+        <GalleryGrid>
+          {sortedItems.map((item) => (
+            <GalleryImageLink item={item} key={item.id} />
+          ))}
+        </GalleryGrid>
+      ) : (
+        <>
+          <Space $height="64px" />
+          <NotFoundContainer>사진이 존재하지 않습니다.</NotFoundContainer>
+        </>
+      )}
     </>
   );
 };
