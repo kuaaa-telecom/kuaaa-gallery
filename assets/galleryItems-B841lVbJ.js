@@ -1,4 +1,4 @@
-import{r as t,j as w,n as c}from"./index-gaYNC34B.js";/**
+import{r as t,j as w,n as c}from"./index-BWIUi_LV.js";/**
  * @license @tabler/icons-react v3.31.0 - MIT
  *
  * This source code is licensed under the MIT license.
