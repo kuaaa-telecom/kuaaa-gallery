@@ -1,4 +1,4 @@
-import{j as e,n as i,b as l}from"./index-D5Mma4Fm.js";import{c as d,g as p,b as x,I as h,a as m,L as g}from"./galleryItems-CjWMro4e.js";/**
+import{j as e,n as i,f as l}from"./index-DPvyerm7.js";import{c as d,g as p,b as x,I as h,a as m,L as g}from"./galleryItems-Cce1GjXY.js";/**
  * @license @tabler/icons-react v3.31.0 - MIT
  *
  * This source code is licensed under the MIT license.
@@ -30,14 +30,14 @@ import{j as e,n as i,b as l}from"./index-D5Mma4Fm.js";import{c as d,g as p,b as 
   max-width: 1200px;
   padding: 64px 2em;
   color: white;
-`,b=i.div`
+`,M=i.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px;
-`,M=i.div`
+`,b=i.div`
   font-weight: 700;
   font-size: 2em;
 `,r=i.div`
@@ -69,4 +69,4 @@ import{j as e,n as i,b as l}from"./index-D5Mma4Fm.js";import{c as d,g as p,b as 
   gap: 4px;
   word-break: keep-all;
   line-height: 1.4em;
-`,z=o=>{const{itemId:a}=o,t=p.find(n=>n.id===a);return t?e.jsxs(e.Fragment,{children:[e.jsx(u,{src:"https://pub-ff8a0fbd3b564db39a4670376b4d99de.r2.dev"+t.image[0]}),e.jsx(y,{children:e.jsxs(I,{children:[e.jsxs(b,{children:[e.jsx(M,{children:t.title})," ",e.jsxs(c,{children:[t.date&&e.jsxs(s,{children:[e.jsx(f,{size:"1.2em"}),t.date.toLocaleDateString()]}),t.author&&e.jsxs(s,{children:[e.jsx(x,{size:"1.2em"})," ",t.author]}),t.location&&e.jsxs(s,{children:[e.jsx(h,{size:"1.2em"})," ",t.location]})]})]}),(t.equipments||t.softwares)&&e.jsxs(e.Fragment,{children:[e.jsx(r,{}),e.jsxs(c,{children:[t.equipments&&t.equipments.map(n=>e.jsxs(s,{children:[e.jsx(m,{size:"1.2em"})," ",n]},n)),t.softwares&&t.softwares.map(n=>e.jsxs(s,{children:[e.jsx(j,{size:"1.2em"})," ",n]},n))]})]}),t.description&&e.jsxs(e.Fragment,{children:[e.jsx(r,{}),e.jsx(k,{children:t.description})]})]})})]}):e.jsx(w,{})},D=function(){const{itemId:a}=l.useParams();return e.jsx(g,{children:e.jsx(z,{itemId:a})})};export{D as component};
+`,z=o=>{const{itemId:a}=o,t=p.find(n=>n.id===a);return t?e.jsxs(e.Fragment,{children:[e.jsx(u,{src:"https://pub-ff8a0fbd3b564db39a4670376b4d99de.r2.dev"+t.image[0]}),e.jsx(y,{children:e.jsxs(I,{children:[e.jsxs(M,{children:[e.jsx(b,{children:t.title})," ",e.jsxs(c,{children:[t.date&&e.jsxs(s,{children:[e.jsx(f,{size:"1.2em"}),t.date.toLocaleDateString()]}),t.author&&e.jsxs(s,{children:[e.jsx(x,{size:"1.2em"})," ",t.author]}),t.location&&e.jsxs(s,{children:[e.jsx(h,{size:"1.2em"})," ",t.location]})]})]}),(t.equipments||t.softwares)&&e.jsxs(e.Fragment,{children:[e.jsx(r,{}),e.jsxs(c,{children:[t.equipments&&t.equipments.map(n=>e.jsxs(s,{children:[e.jsx(m,{size:"1.2em"})," ",n]},n)),t.softwares&&t.softwares.map(n=>e.jsxs(s,{children:[e.jsx(j,{size:"1.2em"})," ",n]},n))]})]}),t.description&&e.jsxs(e.Fragment,{children:[e.jsx(r,{}),e.jsx(k,{children:t.description})]})]})})]}):e.jsx(w,{})},D=function(){const{itemId:a}=l.useParams();return e.jsx(g,{children:e.jsx(z,{itemId:a})})};export{D as component};
