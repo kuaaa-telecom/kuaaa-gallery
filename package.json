@@ -14,7 +14,6 @@
     "@emotion/styled": "^11.14.0",
     "@react-three/drei": "^10.0.6",
     "@react-three/fiber": "^9.0.0-alpha.8",
-    "@react-three/postprocessing": "^3.0.4",
     "@tabler/icons-react": "^3.31.0",
     "@tanstack/react-router": "^1.115.2",
     "@tanstack/router": "^0.0.1-beta.53",
