@@ -287,11 +287,17 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
     const sortedAscending = filteredItems.toSorted(
       (a, b) => (a.date?.getTime() || 0) - (b.date?.getTime() || 0)
     );
-    document.startViewTransition(() =>
+    if (document.startViewTransition) {
+      document.startViewTransition(() =>
+        setSortedItems(
+          sort === "asc" ? sortedAscending : sortedAscending.reverse()
+        )
+      );
+    } else {
       setSortedItems(
         sort === "asc" ? sortedAscending : sortedAscending.reverse()
-      )
-    );
+      );
+    }
   }, [filteredItems, sort]);
 
   const isTagSelected = (label: string) => selectedTags.includes(label);
@@ -365,13 +371,17 @@ const Gallery = ({ items, queryParam, navigate }: GalleryProps) => {
           {gridView === "large" ? (
             <IconGridDots
               onClick={() =>
-                document.startViewTransition(() => setGridView("small"))
+                document.startViewTransition
+                  ? document.startViewTransition(() => setGridView("small"))
+                  : setGridView("small")
               }
             />
           ) : (
             <IconLayoutGrid
               onClick={() =>
-                document.startViewTransition(() => setGridView("large"))
+                document.startViewTransition
+                  ? document.startViewTransition(() => setGridView("large"))
+                  : setGridView("large")
               }
             />
           )}
