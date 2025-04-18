@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as KuaaaGalleryIndexImport } from './routes/kuaaa-gallery/index'
+import { Route as KuaaaGalleryBhnbImport } from './routes/kuaaa-gallery/bhnb'
 import { Route as KuaaaGalleryItemIdImport } from './routes/kuaaa-gallery/$itemId'
 
 // Create/Update Routes
@@ -19,6 +20,12 @@ import { Route as KuaaaGalleryItemIdImport } from './routes/kuaaa-gallery/$itemI
 const KuaaaGalleryIndexRoute = KuaaaGalleryIndexImport.update({
   id: '/kuaaa-gallery/',
   path: '/kuaaa-gallery/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const KuaaaGalleryBhnbRoute = KuaaaGalleryBhnbImport.update({
+  id: '/kuaaa-gallery/bhnb',
+  path: '/kuaaa-gallery/bhnb',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -39,6 +46,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KuaaaGalleryItemIdImport
       parentRoute: typeof rootRoute
     }
+    '/kuaaa-gallery/bhnb': {
+      id: '/kuaaa-gallery/bhnb'
+      path: '/kuaaa-gallery/bhnb'
+      fullPath: '/kuaaa-gallery/bhnb'
+      preLoaderRoute: typeof KuaaaGalleryBhnbImport
+      parentRoute: typeof rootRoute
+    }
     '/kuaaa-gallery/': {
       id: '/kuaaa-gallery/'
       path: '/kuaaa-gallery'
@@ -53,36 +67,45 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/kuaaa-gallery/$itemId': typeof KuaaaGalleryItemIdRoute
+  '/kuaaa-gallery/bhnb': typeof KuaaaGalleryBhnbRoute
   '/kuaaa-gallery': typeof KuaaaGalleryIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/kuaaa-gallery/$itemId': typeof KuaaaGalleryItemIdRoute
+  '/kuaaa-gallery/bhnb': typeof KuaaaGalleryBhnbRoute
   '/kuaaa-gallery': typeof KuaaaGalleryIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/kuaaa-gallery/$itemId': typeof KuaaaGalleryItemIdRoute
+  '/kuaaa-gallery/bhnb': typeof KuaaaGalleryBhnbRoute
   '/kuaaa-gallery/': typeof KuaaaGalleryIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/kuaaa-gallery/$itemId' | '/kuaaa-gallery'
+  fullPaths: '/kuaaa-gallery/$itemId' | '/kuaaa-gallery/bhnb' | '/kuaaa-gallery'
   fileRoutesByTo: FileRoutesByTo
-  to: '/kuaaa-gallery/$itemId' | '/kuaaa-gallery'
-  id: '__root__' | '/kuaaa-gallery/$itemId' | '/kuaaa-gallery/'
+  to: '/kuaaa-gallery/$itemId' | '/kuaaa-gallery/bhnb' | '/kuaaa-gallery'
+  id:
+    | '__root__'
+    | '/kuaaa-gallery/$itemId'
+    | '/kuaaa-gallery/bhnb'
+    | '/kuaaa-gallery/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   KuaaaGalleryItemIdRoute: typeof KuaaaGalleryItemIdRoute
+  KuaaaGalleryBhnbRoute: typeof KuaaaGalleryBhnbRoute
   KuaaaGalleryIndexRoute: typeof KuaaaGalleryIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   KuaaaGalleryItemIdRoute: KuaaaGalleryItemIdRoute,
+  KuaaaGalleryBhnbRoute: KuaaaGalleryBhnbRoute,
   KuaaaGalleryIndexRoute: KuaaaGalleryIndexRoute,
 }
 
@@ -97,11 +120,15 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/kuaaa-gallery/$itemId",
+        "/kuaaa-gallery/bhnb",
         "/kuaaa-gallery/"
       ]
     },
     "/kuaaa-gallery/$itemId": {
       "filePath": "kuaaa-gallery/$itemId.tsx"
+    },
+    "/kuaaa-gallery/bhnb": {
+      "filePath": "kuaaa-gallery/bhnb.tsx"
     },
     "/kuaaa-gallery/": {
       "filePath": "kuaaa-gallery/index.tsx"
