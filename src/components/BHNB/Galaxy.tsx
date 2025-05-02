@@ -3,8 +3,8 @@ import {
   PerspectiveCamera,
   TrackballControls,
 } from "@react-three/drei";
-import { extend, ThreeElement, useFrame } from "@react-three/fiber";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { extend, ThreeElement, useFrame, useThree } from "@react-three/fiber";
+import { Suspense, useMemo, useRef, useState } from "react";
 import * as three from "three";
 import {
   CopyShader,
@@ -30,11 +30,17 @@ interface SceneProps {
 
 const Scene: React.FC<SceneProps> = (props) => {
   const { lineCount } = props;
+  const { size } = useThree();
+
+  const resolution = useMemo(
+    () => new three.Vector2(size.width, size.height),
+    [size.width, size.height]
+  );
 
   return (
     <>
       <Effects disableGamma>
-        <unrealBloomPass args={[new three.Vector2(0.4, 0.4), 1.5, 1, 0]} />
+        <unrealBloomPass args={[resolution, 1.5, 1, 0]} />
         <shaderPass args={[CopyShader]} />
       </Effects>
       <Stars />
@@ -54,46 +60,43 @@ const Galaxy: React.FC = () => {
 
   const elapsedTime = useRef<number>(0);
 
-  const [zoomStartTime] = useState<number>(0);
+  const zoomStartTime = useRef<number>(0);
   const [targetPosition] = useState<three.Vector3>(new three.Vector3(0, 0, 0));
-  const [targetLook] = useState<three.Vector3>(new three.Vector3(0, 0, 0));
 
-  useEffect(() => {
-    if (cameraRef.current && controlRef.current) {
-      controlRef.current.enabled = false;
-      cameraRef.current.position.set(500, 500, 500);
-      cameraRef.current.updateProjectionMatrix();
-      controlRef.current.enabled = true;
-      controlRef.current.update();
-    }
-  }, []);
+  const initialized = useRef(false);
 
   useFrame(({ clock }) => {
-    elapsedTime.current = clock.getElapsedTime();
-    const time = clock.getElapsedTime() - zoomStartTime;
+    if (!initialized.current) {
+      if (cameraRef.current && controlRef.current) {
+        const cam = cameraRef.current;
+        const controls = controlRef.current;
 
-    if (cameraRef.current && controlRef.current) {
-      if (time < ZOOMTIME) {
-        controlRef.current.enabled = false;
-        const newVector = cameraRef.current.position.lerp(
-          targetPosition,
-          time / ZOOMTIME
-        );
-        cameraRef.current.position.set(newVector.x, newVector.y, newVector.z);
-        cameraRef.current.lookAt(targetLook);
-        const newTargetVector = controlRef.current.target.lerp(
-          targetLook,
-          time / ZOOMTIME
-        );
-        controlRef.current.target.set(
-          newTargetVector.x,
-          newTargetVector.y,
-          newTargetVector.z
-        );
-      } else {
-        controlRef.current.enabled = true;
+        controls.enabled = false;
+        cam.position.set(500, 500, 500);
+        cam.updateProjectionMatrix();
+        controls.update();
+
+        zoomStartTime.current = clock.getElapsedTime();
+        initialized.current = true;
       }
-      controlRef.current.update();
+    } else {
+      elapsedTime.current = clock.getElapsedTime();
+      const time = clock.getElapsedTime() - zoomStartTime.current;
+
+      if (cameraRef.current && controlRef.current) {
+        const cam = cameraRef.current;
+        const controls = controlRef.current;
+        if (time < ZOOMTIME) {
+          controls.enabled = false;
+          const newVector = new three.Vector3()
+            .copy(cam.position)
+            .lerp(targetPosition, Math.min(1, time / ZOOMTIME));
+          cam.position.set(newVector.x, newVector.y, newVector.z);
+        } else {
+          controls.enabled = true;
+        }
+        controls.update();
+      }
     }
   });
 

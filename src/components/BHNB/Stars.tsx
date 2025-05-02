@@ -126,12 +126,11 @@ const Stars: React.FC = () => {
         new three.BufferAttribute(sizes, 1)
       );
     }
-  }, [starsRef, positions, colors, sizes]);
+  }, [positions, colors, sizes]);
 
   return (
     <>
       <points ref={starsRef}>
-        <bufferGeometry />
         <shaderMaterial
           attach="material"
           transparent
